@@ -3,8 +3,9 @@ function ShopList (props) {
 
     return (
 
-        <div>
-            <ul>
+        <div className = 'shopWindow'>
+        
+            <ul className = 'shopGrid'>
               {props.items.map((item) => (
 
               <li className = 'itemCard' key={item.objectID}>
@@ -14,7 +15,6 @@ function ShopList (props) {
 
               ))}
             </ul>
-            );
         </div>
 
     )};

@@ -1,31 +1,32 @@
 body {
     margin: 0;
     padding: 0;
-
 }
 
 .window{
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
+    background: seashell;
 }
 
 .home {
-    height: 93vh;
-    width: 100vw;
+    height: 93%;
+    width: 100%;
     background-image: url("./Images/Home2.jpg");
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
     .shopLinkContainer {
-        height: 5vh;
-        width: 10vw;
+        height: 5%;
+        width: 10%;
         padding-right: 35vw;
 
     }
@@ -44,10 +45,8 @@ body {
         }
 
 .shop {
-    height: 93vh;
-    width: 100vw;
-    background-image: url('./Images/Shop.jpg');
-    background-size: cover;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,54 +54,68 @@ body {
 }
 
 
+    .shopWindow {
+        height: inherit;
+        width: 80%;
+    }
+
     .shopGrid {
-        height: 83vh;
-        width: 70vw;
-        background: black;
+        height: 83%;
+        width: 100%;
         border: solid;
-        border-color: seashell;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        justify-items: center;
+        margin-bottom: 10%;
+        margin-top: 5%;
     }
 
     .shopTitle {
-        height: 10vh;
+        height: 20%;
         width: inherit;
-        color: seashell;
-        font-size: 20px;
+        color: black;
+        font-size: 1.5vw;
         text-align: center;
         text-decoration: underline;
+        margin-top: 2%;
+        width: 100%;
     }
 
 
     .itemCard {
-        height: 30vh;
-        width: 30vw;
         background-color: seashell;
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-color: black;
+        border: solid;
+        margin-bottom: 5%;
     }
 
         .itemImage {
-            max-width: 50%;
-            max-height: 80%;
-            object-fit: contain;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: black;
+            border-bottom: solid;
         }
 
 
 .navbar {
-    height: 7vh;
-    width: 100vw;
-    background-color: black;
+    height: 7%;
+    width: 100%;
+    background-color: seashell;
     border-bottom: solid;
-    border-color:seashell;
+    border-color:black;
 }
 
     .logo {
-        font-size: 36px;
-        color: seashell;
+        font-size: 2.8vw;
+        font: 2.8vh;
+        color: black;
         margin-left: 2vw;
     }

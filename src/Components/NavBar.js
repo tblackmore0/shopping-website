@@ -3,7 +3,7 @@ function NavBar () {
 return (
     <div className='navbar'>
         <div className='logo'>
-            Jaeger
+            Jaeger.
         </div>
         <div className='pageLinks'></div>
     </div>
