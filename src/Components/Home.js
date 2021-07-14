@@ -1,12 +1,16 @@
+import {Link} from 'react-router-dom'
+
 function Home () {
 
     return (
         <div className='home'>
-            <div className='shopLinkContainer'>
-                <div className='shopLink'>
-                    <span className = 'shopLinkText' >Catalogue </span>
+            <Link to='/Shop'>
+                <div className='shopLinkContainer'>
+                    <div className='shopLink'>
+                        <span className = 'shopLinkText' >Catalogue </span>
+                    </div>
                 </div>
-            </div>
+            </Link>
         </div>
     )};
     

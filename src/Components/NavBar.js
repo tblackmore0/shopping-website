@@ -1,10 +1,13 @@
+import {Link} from 'react-router-dom';
 function NavBar () {
 
 return (
     <div className='navbar'>
-        <div className='logo'>
-            Jaeger.
-        </div>
+        <Link to='/'>
+            <div className='logo'>
+                Jaeger.
+            </div>
+        </Link>
         <div className='pageLinks'></div>
     </div>
 )};
