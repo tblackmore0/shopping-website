@@ -1,4 +1,8 @@
 
+ul li {
+    list-style-type: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -67,7 +71,7 @@ body {
     }
 
     .shopGrid {
-        height: 83%;
+        max-height: 83%;
         width: 100%;
         border: solid;
         display: grid;
@@ -101,6 +105,13 @@ body {
         border-color: black;
         border: solid;
         margin-bottom: 5%;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .itemCard:hover {
+        cursor: pointer;
+        border-width: 5px;
     }
 
         .itemImage {
@@ -110,6 +121,24 @@ body {
             border-bottom: black;
             border-bottom: solid;
         }
+    
+    .modalBackground {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .itemModal {
+        display: none;
+        position: absolute;
+        height: 50vh;
+        width: 50vw;
+        background-color: black;
+        z-index: 2;
+    }
 
 
 .navbar {
@@ -121,14 +150,43 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
 }
 
     .logo {
+        height:inherit;
+        width: 50%;
         font-size: 2.8vw;
         font: 2.8vh;
         color: black;
         margin-left: 2vw;
     }
+
+    .cartDiv {
+        height:inherit;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+        .shoppingCart {
+            width: 7%;
+            height: 65%;
+            object-fit: contain;
+
+        }
+
+        .cartNumber {
+            font-size: 1.5vw;
+            height:inherit;
+            width: 6%;
+            color: black;
+            padding-top: 6%
+        }
 
 a {
     text-decoration: inherit;

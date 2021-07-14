@@ -3,12 +3,15 @@ function NavBar () {
 
 return (
     <div className='navbar'>
-        <Link to='/'>
             <div className='logo'>
-                Jaeger.
+                <Link to='/'>
+                    Jaeger.
+                </Link>
             </div>
-        </Link>
-        <div className='pageLinks'></div>
+        <div className='cartDiv'>
+            <img className='shoppingCart' src='siteImages/Basket.png' />
+            <span className='cartNumber'>0</span>
+    </div>
     </div>
 )};
 

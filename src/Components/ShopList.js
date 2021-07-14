@@ -1,3 +1,4 @@
+//import ShowItemModal from './ShowItemModal';
 function ShopList (props) {
 
 
@@ -8,16 +9,26 @@ function ShopList (props) {
             <ul className = 'shopGrid'>
               {props.items.map((item) => (
 
-              <li className = 'itemCard' key={item.objectID}>
-                  <img className = 'itemImage' src={item.imageURL} alt='why not work'></img>
-                  <span>{item.name}</span>
-            </li>
+              <li >
+                  <div className = 'itemCard' onClick={ShowItemModal} data-key={item.objectID} key={item.objectID}>
+                    <img className = 'itemImage' src={item.imageURL} alt='why not work' data-key={item.objectID}></img>
+                    <span data-key={item.objectID}>{item.name}</span>
+                  </div>
+              </li>
 
               ))}
             </ul>
         </div>
 
     )};
+
+
+    function ShowItemModal (e) {
+
+        const ID = e.target.attributes.getNamedItem("data-key").value;
+    
+        console.log(ID);
+    }
 
 
 export default ShopList;

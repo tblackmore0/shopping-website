@@ -1,4 +1,5 @@
 import ShopList from './ShopList'
+import ShopModals from './ShopModals'
 
 function Shop () {
 
@@ -65,6 +66,7 @@ function Shop () {
         <div className='shop'>
             <span className = 'shopTitle'>Catalogue</span>
                 <ShopList items={itemsList} />
+                <ShopModals items={itemsList} />
             </div>
     )};
     
