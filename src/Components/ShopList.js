@@ -1,4 +1,5 @@
-//import ShowItemModal from './ShowItemModal';
+import {itemsList} from './Shop'
+
 function ShopList (props) {
 
 
@@ -26,9 +27,10 @@ function ShopList (props) {
     function ShowItemModal (e) {
 
         const ID = e.target.attributes.getNamedItem("data-key").value;
-    
-        console.log(ID);
-    }
+        
+        const mappedItems = itemsList.map(function(item) {
+            if (item.objectID === ID) 
+            { return console.log('Success') }})}
 
 
 export default ShopList;
