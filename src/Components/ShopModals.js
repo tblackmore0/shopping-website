@@ -2,11 +2,11 @@ function ShopModals (props) {
 
     return (
 
-        <div className ='modalBackground'>
-            <ul>
+        <div id ='modalBackground'>
+            <ul id='modalList'>
               {props.items.map((item) => (
 
-              <li className = 'itemModal' key={item.objectID}>
+              <li className = 'itemModal' data-key={item.objectID}>
                   <img className = 'itemImage' src={item.imageURL} alt='why not work'></img>
                   <span>{item.name}</span>
               </li>

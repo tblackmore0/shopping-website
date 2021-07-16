@@ -26,11 +26,23 @@ function ShopList (props) {
 
     function ShowItemModal (e) {
 
-        const ID = e.target.attributes.getNamedItem("data-key").value;
-        
-        const mappedItems = itemsList.map(function(item) {
-            if (item.objectID === ID) 
-            { return console.log('Success') }})}
+        const modalListArray = Array.from(document.getElementsByClassName('itemModal'))
 
+        const ID = e.target.attributes.getNamedItem("data-key").value;
+
+        const modalBackground = document.getElementById('modalBackground')
+
+  /*      const mappedItems = itemsList.map(function(item) {
+            if (item.objectID == ID) 
+            { return console.log('Success') 
+            */
+
+           const mappedList = modalListArray.map(function (item) {
+                if (item.attributes.getNamedItem("data-key").value == ID) 
+                { console.log('success')
+                item.style.display = 'flex'
+                modalBackground.style.display = 'flex'
+            } 
+        })}
 
 export default ShopList;
