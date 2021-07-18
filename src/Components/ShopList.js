@@ -32,11 +32,6 @@ function ShopList (props) {
 
         const modalBackground = document.getElementById('modalBackground')
 
-  /*      const mappedItems = itemsList.map(function(item) {
-            if (item.objectID == ID) 
-            { return console.log('Success') 
-            */
-
            const mappedList = modalListArray.map(function (item) {
                 if (item.attributes.getNamedItem("data-key").value == ID) 
                 { console.log('success')

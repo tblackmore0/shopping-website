@@ -61,7 +61,6 @@ const itemsList =  [
 
 function Shop () {
 
-
     return (
         <div className='shop'>
             <span className = 'shopTitle'>Catalogue</span>
@@ -69,7 +68,8 @@ function Shop () {
                 <ShopModals items={itemsList} />
             </div>
     )};
-    
+
+
 
 export default Shop;
 export {itemsList}

@@ -12,8 +12,8 @@ body {
 }
 
 .window{
-    width: auto;
-    height: auto;
+    width: 100vw;
+    height: 100vh;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ body {
 
 .home {    
     width: 100vw;
-    height: 92vh;
+    height: 100vh;
     background-image: url("./Images/Home2.jpg");
     background-size: cover;
     display: flex;
@@ -32,7 +32,6 @@ body {
     align-items: center;
     overflow: hidden;
     box-sizing: border-box;
-
 }
 
     .shopLinkContainer {
@@ -127,18 +126,41 @@ body {
         position: absolute;
         height: 100vh;
         width: 100vw;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        overflow: hidden;
+        padding-right: 15px;
     }
 
-    .itemModal {
-        display: none;
-        position: absolute;
-        height: 500px;
-        width: 500px;
-        background-color: black;
-        z-index: 3;
-    }
+        .itemModal {
+            display: none;
+            position: absolute;
+            left: 20%;
+            height: 80%;
+            width: 60%;
+            background-color: seashell;
+            border: black;
+            border: solid;
+            z-index: 3;
+        }
+
+        .modalImage {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: black;
+            border-right: black;
+            border-bottom: solid;
+            border-right: solid;
+        }
+
+        .modalTitle {
+
+        }
+
+        .modalText {
+
+        }
 
 
 .navbar {
@@ -153,7 +175,24 @@ body {
     display: flex;
     flex-direction: row;
     position: fixed;
+    z-index: 2;
 }
+
+    .altNav {
+        height: 8vh;
+        width: 100vw;
+        background-color: black;
+        border-bottom: solid;
+        border-color:black;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        z-index: 2;
+
+    }
 
     .logo {
         height:inherit;
@@ -163,6 +202,16 @@ body {
         color: black;
         margin-left: 2vw;
     }
+
+        .altLogo {
+            height:inherit;
+            width: 50%;
+            font-size: 2.8vw;
+            font: 2.8vh;
+            color: seashell;
+            margin-left: 2vw;
+    }
+
 
     .cartDiv {
         height:inherit;

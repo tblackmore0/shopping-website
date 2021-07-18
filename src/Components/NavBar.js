@@ -2,8 +2,8 @@ import {Link} from 'react-router-dom';
 function NavBar () {
 
 return (
-    <div className='navbar'>
-            <div className='logo'>
+    <div className='navbar' id='navBar'>
+            <div className='logo' id='logo' onClick={changeStylesHome}>
                 <Link to='/'>
                     Jaeger.
                 </Link>
@@ -14,5 +14,15 @@ return (
     </div>
     </div>
 )};
+
+
+
+function changeStylesHome () {
+
+    document.getElementById('navBar').className='navbar'
+    document.getElementById('logo').className='logo'
+
+}
+    
 
 export default NavBar;
