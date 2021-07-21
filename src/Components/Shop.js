@@ -63,7 +63,6 @@ const itemsList =  [
 
 function Shop (props) {
 
-   // console.log(props.shoppingCart.length)
 
     return (
         <div className='shop'>

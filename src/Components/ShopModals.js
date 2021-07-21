@@ -3,7 +3,8 @@ import PushToCart from './PushToCart';
 
 function ShopModals (props) {
 
-let shoppingCart = props.shoppingCart
+let shoppingCart = props.shoppingCart;
+let updateCart = props.updateCart;
 
     return (
 
@@ -18,7 +19,7 @@ let shoppingCart = props.shoppingCart
                     <p className='modalText'>{item.description}</p>
                     <div className='addToCart'>
                         <input type='number' step='1' placeholder='1'></input>
-                        <button onClick={() => PushToCart(shoppingCart)} data-key={item.objectID}>Add to cart</button>
+                        <button onClick={(e) => PushToCart(e, shoppingCart, updateCart)} data-key={item.objectID}>Add to cart</button>
                     </div> 
                 </div>
               </li>
@@ -42,9 +43,6 @@ function hideModal (e) {
     const mappedList = modalListArray.map(function (item) {
         item.style.display = 'none'
     })}
-
-
 }
-
 
     export default ShopModals

@@ -1,7 +1,8 @@
 import {Link} from 'react-router-dom';
+import PushToCart from './PushToCart';
+
 function NavBar (props) {
 
-    console.log(props.shoppingCart.length)
 
 return (
     <div className='navbar' id='navBar'>
@@ -12,7 +13,7 @@ return (
             </div>
         <div className='cartDiv'>
             <img className='shoppingCart' src='siteImages/Basket.png' />
-            <span className='cartNumber'>{props.shoppingCart.length}</span>
+            <span className='cartNumber' onChange={console.log(props.shoppingCart)}>{props.shoppingCart.length}</span>
     </div>
     </div>
 )};

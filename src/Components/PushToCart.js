@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import ShopModals from './ShopModals';
+import {itemsList} from './Shop'
 
-function PushToCart (shoppingCart) {
-    console.log(shoppingCart.length)
-    /*let itemID = e.target.attributes.getNamedItem("data-key").value;
-     let mappedArray = props.items.map(function (item) {
-        if (item.objectID === itemID) {
-            props.shoppingCart.push(item)
-            console.log(props.shoppingCart)
+
+function PushToCart (e, shoppingCart, updateCart) {
+    let itemID = e.target.attributes.getNamedItem("data-key").value;
+    let mappedArray = itemsList.map(function (item) {
+        if (item.objectID == itemID) {
+          updateCart (shoppingCart.concat(item));
         }
-    })*/
+    })
   }; 
+
 
 export default PushToCart
