@@ -1,12 +1,14 @@
 import ShopList from './ShopList'
 import ShopModals from './ShopModals'
 
+
 const itemsList =  [
     {
         name: 'Stool',
         imageURL: 'itemImages/Stool.jpg',
         price: '£40',
         objectID: 0,
+        description: 'Hi',
     },
     {
         name: 'Stand',
@@ -59,13 +61,15 @@ const itemsList =  [
 ];
 
 
-function Shop () {
+function Shop (props) {
+
+   // console.log(props.shoppingCart.length)
 
     return (
         <div className='shop'>
             <span className = 'shopTitle'>Catalogue</span>
-                <ShopList items={itemsList} />
-                <ShopModals items={itemsList} />
+                <ShopList items={itemsList} shoppingCart={props.shoppingCart} updateCart={props.updateCart}/>
+                <ShopModals items={itemsList} shoppingCart={props.shoppingCart} updateCart={props.updateCart}/>
             </div>
     )};
 

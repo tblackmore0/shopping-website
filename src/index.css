@@ -75,6 +75,7 @@ body {
         border: solid;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 50%);
         gap: 5%;
         margin: 0;
         padding: 0;
@@ -136,6 +137,7 @@ body {
             display: none;
             position: absolute;
             left: 20%;
+            top:10%;
             height: 80%;
             width: 60%;
             background-color: seashell;
@@ -154,12 +156,37 @@ body {
             border-right: solid;
         }
 
-        .modalTitle {
+        .modalDiv {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            height:100%;
+            width: 100%;
+        }
 
+        .modalTitle {
+            display: flex;
+            height: 5%;
+            width: inherit;
+            color: black;
+            font-size: 1.5vw;
+            text-decoration: underline;
+            margin-top: 2%;
+            width: 100%;
         }
 
         .modalText {
+            font-size: 1vw;
 
+
+        }
+
+        .addToCart {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+            gap: 5%;
         }
 
 
