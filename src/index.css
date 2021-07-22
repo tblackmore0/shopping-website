@@ -203,6 +203,7 @@ body {
     flex-direction: row;
     position: fixed;
     z-index: 2;
+    justify-content: space-between;
 }
 
     .altNav {
@@ -242,7 +243,7 @@ body {
 
     .cartDiv {
         height:inherit;
-        width: 50%;
+        width: 7%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -250,19 +251,38 @@ body {
     }
 
         .shoppingCart {
-            width: 7%;
+            width: 70%;
             height: 65%;
             object-fit: contain;
 
         }
 
+        .shoppingCart:hover {
+            cursor: pointer;
+        }
+
         .cartNumber {
             font-size: 1.5vw;
-            height:inherit;
-            width: 6%;
+            height: 13%;
+            width: 30%;
             color: black;
-            padding-top: 6%
+            padding-right: 15%;
         }
+
+        .cartNumber:hover {
+            cursor: pointer;
+        }
+
+    .cartPreviewDiv {
+        height: 35vh;
+        width: 20vw;
+        background-color: black;
+        position: absolute;
+        display: none;
+        left: 80vw;
+        top: 8vh;
+
+    }
 
 a {
     text-decoration: inherit;

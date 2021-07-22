@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ShopModals from './ShopModals';
 import {itemsList} from './Shop'
+import {hideModal} from './ShopModals';
 
 
 function PushToCart (e, shoppingCart, updateCart) {
@@ -10,6 +11,9 @@ function PushToCart (e, shoppingCart, updateCart) {
           updateCart (shoppingCart.concat(item));
         }
     })
+    hideModal(e)
+    const modalBackground = document.getElementById('modalBackground')
+    modalBackground.style.display = 'none'
   }; 
 
 

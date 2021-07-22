@@ -46,3 +46,4 @@ function hideModal (e) {
 }
 
     export default ShopModals
+    export {hideModal}

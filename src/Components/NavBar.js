@@ -1,8 +1,10 @@
 import {Link} from 'react-router-dom';
 import PushToCart from './PushToCart';
+import {ShowCartPreview, HideCartPreview} from './CartPreview'
 
 function NavBar (props) {
 
+let shoppingCart = props.shoppingCart
 
 return (
     <div className='navbar' id='navBar'>
@@ -11,10 +13,15 @@ return (
                     Jaeger.
                 </Link>
             </div>
-        <div className='cartDiv'>
-            <img className='shoppingCart' src='siteImages/Basket.png' />
-            <span className='cartNumber' onChange={console.log(props.shoppingCart)}>{props.shoppingCart.length}</span>
-    </div>
+        <div className='cartDiv' onMouseOver={(e) => ShowCartPreview(shoppingCart)} onMouseLeave={HideCartPreview}>
+            <img className='shoppingCart' src='siteImages/Basket.png' alt='shopping basket' />
+            <span className='cartNumber' onChange={console.log(shoppingCart)}>{shoppingCart.length}</span>
+            <div id='cartPreview' className='cartPreviewDiv'>
+            {shoppingCart}
+            </div>
+        </div>
+
+        
     </div>
 )};
 
