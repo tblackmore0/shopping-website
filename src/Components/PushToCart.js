@@ -5,6 +5,7 @@ import {hideModal} from './ShopModals';
 
 
 function PushToCart (e, shoppingCart, updateCart) {
+
     let itemID = e.target.attributes.getNamedItem("data-key").value;
     let mappedArray = itemsList.map(function (item) {
         if (item.objectID == itemID) {
@@ -14,6 +15,7 @@ function PushToCart (e, shoppingCart, updateCart) {
     hideModal(e)
     const modalBackground = document.getElementById('modalBackground')
     modalBackground.style.display = 'none'
+
   }; 
 
 

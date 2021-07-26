@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import PushToCart from './PushToCart';
-import {ShowCartPreview, HideCartPreview} from './CartPreview'
+import {ShowCartPreview, HideCartPreview, CartPreview} from './CartPreview'
+import React, { useState } from 'react';
 
 function NavBar (props) {
 
@@ -17,7 +18,7 @@ return (
             <img className='shoppingCart' src='siteImages/Basket.png' alt='shopping basket' />
             <span className='cartNumber' onChange={console.log(shoppingCart)}>{shoppingCart.length}</span>
             <div id='cartPreview' className='cartPreviewDiv'>
-            {shoppingCart}
+                <CartPreview shoppingCart={shoppingCart}/>
             </div>
         </div>
 

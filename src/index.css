@@ -276,13 +276,61 @@ body {
     .cartPreviewDiv {
         height: 35vh;
         width: 20vw;
-        background-color: black;
+        background-color: seashell;
         position: absolute;
         display: none;
         left: 80vw;
         top: 8vh;
-
+        border: solid;
+        border-color:black;
+        border-top: none;
+        flex-direction: column;
     }
+
+        .cartItemsPreview {
+            height: inherit;
+            width:inherit;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .cartPreviewItem {
+            height: 20%;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            margin: 5%;
+
+        }
+
+        .cartPreviewItemFaded {
+            height: 20%;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            margin: 5%;
+            opacity: 50%;
+        }
+        
+
+        .checkoutLink {
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: seashell;
+            cursor: pointer;
+	        outline: inherit;
+        }
+
+        .emptyCart {
+            height: inherit;
+            width:inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
 a {
     text-decoration: inherit;

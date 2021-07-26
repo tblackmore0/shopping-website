@@ -20,7 +20,7 @@ const [shoppingCart, updateCart] = React.useState([]);
             <Home />
           </Route>
           <Route path ="/shop">
-            <Shop shoppingCart={shoppingCart} updateCart={updateCart} />
+            <Shop shoppingCart={shoppingCart} updateCart={updateCart}/>
           </Route>
         </Switch>
       </div>
