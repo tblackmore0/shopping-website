@@ -2,8 +2,10 @@ function CartPreviewItemFaded (props) {
     
     if (props.item) {
         return (
-        <div className='cartPreviewItemFaded'>
-            {props.item.name}
+            <div className='cartPreviewItemFaded'>
+            <div className='cartPreviewName'>
+                {props.item.name}
+            </div>
         </div>
 
     )}

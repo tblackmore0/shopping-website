@@ -16,6 +16,7 @@ function CartPreview (props) {
     let lastItem = props.shoppingCart[props.shoppingCart.length - 1]
     let secondLastItem = props.shoppingCart[props.shoppingCart.length - 2]
     let thirdLastItem = props.shoppingCart[props.shoppingCart.length - 3]
+    let fourthLastItem = props.shoppingCart[props.shoppingCart.length - 4]
 
    let cartSum = props.shoppingCart.reduce((sum, i) => sum + i.price, 0)
 
@@ -32,9 +33,12 @@ function CartPreview (props) {
         <div className='cartItemsPreview'>
             <CartPreviewItem item={lastItem}/>
             <CartPreviewItem item={secondLastItem}/>
-            <CartPreviewItemFaded item={thirdLastItem} />
-            £{cartSum}
-            <button className='checkoutLink'>View Basket</button>
+            <CartPreviewItem item={thirdLastItem} />
+            <CartPreviewItemFaded item={fourthLastItem} />
+            <div className='cartTotal'>
+                £{cartSum}
+            </div>
+            <div className='checkoutLink'>View Basket</div>
         </div>
 
     )

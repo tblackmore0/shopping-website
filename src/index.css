@@ -29,7 +29,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -37,8 +36,9 @@ body {
     .shopLinkContainer {
         height: 5vh;
         width: 10vw;
-        padding-right: 35vw;
-
+        position: absolute;
+        left: 28vw;
+        bottom: 23.5vw;
     }
 
         .shopLink {
@@ -48,11 +48,10 @@ body {
             padding-bottom: 0.5vh;
             height: inherit;
             width: inherit;
-            background: seashell;
-            color: black;
-            border: solid;
+            background: black;
+            color: seashell;
 
-        }
+       }
 
 .shop {
     height: 100%;
@@ -193,9 +192,7 @@ body {
 .navbar {
     height: 8vh;
     width: 100vw;
-    background-color: seashell;
-    border-bottom: solid;
-    border-color:black;
+    background-color: black;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -227,7 +224,7 @@ body {
         width: 50%;
         font-size: 2.8vw;
         font: 2.8vh;
-        color: black;
+        color: seashell;
         margin-left: 2vw;
     }
 
@@ -265,7 +262,7 @@ body {
             font-size: 1.5vw;
             height: 13%;
             width: 30%;
-            color: black;
+            color: seashell;
             padding-right: 15%;
         }
 
@@ -274,9 +271,9 @@ body {
         }
 
     .cartPreviewDiv {
-        height: 35vh;
+        height: 31vh;
         width: 20vw;
-        background-color: seashell;
+        background-color: rgb(255, 245, 238);
         position: absolute;
         display: none;
         left: 80vw;
@@ -296,21 +293,55 @@ body {
         }
 
         .cartPreviewItem {
-            height: 20%;
+            height: 40%;
             width: 90%;
             display: flex;
             flex-direction: row;
-            margin: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
+            gap: 30%;
+            align-items: center;
 
         }
 
+            .removeCartItem {
+                height: 40%;
+                color: black;
+                width: 9%;
+                text-align: center;
+                border: solid;
+                border-color: black;
+                border-width: 1px;
+                margin-right: 5%;
+                cursor: pointer;
+            }
+            
+            .removeCartItem:hover {
+                background-color: black;
+                color: seashell;
+            }
+
+            .cartPreviewName {
+                height: inherit;
+                width: 20%;
+
+            }
+
+            .cartPreviewPrice {
+                height: inherit;
+                width: 20%;
+            }
+
         .cartPreviewItemFaded {
-            height: 20%;
+            height: 6%;
             width: 90%;
             display: flex;
             flex-direction: row;
-            margin: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
             opacity: 50%;
+            gap: 30%;
+            z-index: 1;
         }
         
 
@@ -321,7 +352,10 @@ body {
             background-color: black;
             color: seashell;
             cursor: pointer;
-	        outline: inherit;
+            text-align: center;
+            padding-top: 2.5%;
+            height: 13%;
+            z-index: 3;
         }
 
         .emptyCart {
@@ -330,6 +364,16 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .cartTotal {
+            height: 10%;
+            width: 100%;
+            border-top: solid;
+            border-color: black;
+            text-align: center;
+            z-index: 2;
+            background-color: seashell;
         }
 
 a {
