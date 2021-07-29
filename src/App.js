@@ -14,7 +14,7 @@ const [shoppingCart, updateCart] = React.useState([]);
   return (
     <Router >
       <div className='window'>
-        <NavBar shoppingCart={shoppingCart}/>
+        <NavBar shoppingCart={shoppingCart} updateCart={updateCart}/>
         <Switch>
           <Route path ="/" exact>
             <Home />

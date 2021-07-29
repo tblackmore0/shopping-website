@@ -16,9 +16,9 @@ return (
             </div>
         <div className='cartDiv' onMouseOver={(e) => ShowCartPreview(shoppingCart)} onMouseLeave={HideCartPreview}>
             <img className='shoppingCart' src='siteImages/Basket.png' alt='shopping basket' />
-            <span className='cartNumber' onChange={console.log(shoppingCart)}>{shoppingCart.length}</span>
+            <span className='cartNumber'>{shoppingCart.length}</span>
             <div id='cartPreview' className='cartPreviewDiv'>
-                <CartPreview shoppingCart={shoppingCart}/>
+                <CartPreview shoppingCart={shoppingCart} updateCart={props.updateCart}/>
             </div>
         </div>
 

@@ -2,6 +2,16 @@ import CartPreviewItem from "./CartPreviewItem";
 import CartPreviewItemFaded from "./CartPreviewItemFaded";
 import React, { useState } from 'react';
 
+function RemoveCartItem (e, item, shoppingCart, updateCart) {
+
+        let itemID = item.objectID
+        console.log(itemID)
+
+        updateCart (shoppingCart.filter(item => item.objectID != itemID ))
+        console.log(shoppingCart) 
+    }
+
+
 function ShowCartPreview (shoppingCart) {
     let cartPreview = document.getElementById('cartPreview')
     cartPreview.style.display='flex';
@@ -31,10 +41,10 @@ function CartPreview (props) {
     else {
     return (
         <div className='cartItemsPreview'>
-            <CartPreviewItem item={lastItem}/>
-            <CartPreviewItem item={secondLastItem}/>
-            <CartPreviewItem item={thirdLastItem} />
-            <CartPreviewItemFaded item={fourthLastItem} />
+            <CartPreviewItem updateCart={props.updateCart} shoppingCart={props.shoppingCart} item={lastItem}/>
+            <CartPreviewItem updateCart={props.updateCart} shoppingCart={props.shoppingCart} item={secondLastItem}/>
+            <CartPreviewItem updateCart={props.updateCart} shoppingCart={props.shoppingCart} item={thirdLastItem} />
+            <CartPreviewItemFaded updateCart={props.updateCart} shoppingCart={props.shoppingCart}  item={fourthLastItem} />
             <div className='cartTotal'>
                 £{cartSum}
             </div>
@@ -44,4 +54,4 @@ function CartPreview (props) {
     )
 }}
 
-export {ShowCartPreview, HideCartPreview, CartPreview}
+export {ShowCartPreview, HideCartPreview, CartPreview, RemoveCartItem}

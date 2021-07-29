@@ -1,4 +1,7 @@
+import {RemoveCartItem} from './CartPreview';
+
 function CartPreviewItemFaded (props) {
+
     
     if (props.item) {
         return (

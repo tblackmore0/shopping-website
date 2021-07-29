@@ -1,4 +1,10 @@
+import {RemoveCartItem} from './CartPreview';
+
 function CartPreviewItem (props) {
+
+let item = props.item 
+let shoppingCart = props.shoppingCart
+let updateCart= props.updateCart
     
     if (props.item) {
         return (
@@ -9,7 +15,7 @@ function CartPreviewItem (props) {
                 <div className='cartPreviewPrice'>
                     £{props.item.price}
                 </div>
-                <div className='removeCartItem' /*onClick={removeCartItem} */>
+                <div className='removeCartItem' onClick={(e) => RemoveCartItem(e,item, shoppingCart, updateCart)}>
                     X
                 </div>
             </div>
