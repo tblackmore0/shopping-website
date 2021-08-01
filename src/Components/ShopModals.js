@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PushToCart from './PushToCart';
+import { HideCartPreview } from './CartPreview';
 
 function ShopModals (props) {
 
@@ -7,8 +8,7 @@ let shoppingCart = props.shoppingCart;
 let updateCart = props.updateCart;
 
     return (
-
-        <div id ='modalBackground' onClick={hideModal}>
+        <div id ='modalBackground' onClick={backgroundHandler}>
             <ul id='modalList'>
               {props.items.map((item) => (
 
@@ -36,14 +36,26 @@ function hideModal (e) {
     const modalListArray = Array.from(document.getElementsByClassName('itemModal'))
     const modalBackground = document.getElementById('modalBackground')
 
-    if (e.target === modalBackground) {
-
         modalBackground.style.display = 'none'
 
     const mappedList = modalListArray.map(function (item) {
         item.style.display = 'none'
     })}
-}
+
+
+function backgroundHandler (e) {
+
+    console.log(e.target)
+
+    const preview = document.getElementById('cartPreview')
+    const modalBackground = document.getElementById('modalBackground')
+    const navBar = document.getElementById('navBar')
+    const cart = document.getElementById('cartDiv')
+
+    if (e.target == modalBackground || (e.target == navBar && e.target != cart))  {
+    hideModal(e);
+    HideCartPreview(e);
+}}
 
     export default ShopModals
-    export {hideModal}
+    export {hideModal, backgroundHandler}

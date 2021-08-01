@@ -1,10 +1,11 @@
-import {RemoveCartItem} from './CartPreview';
+import {DeleteItem} from './CartPreview';
 
 function CartPreviewItem (props) {
 
 let item = props.item 
 let shoppingCart = props.shoppingCart
 let updateCart= props.updateCart
+
     
     if (props.item) {
         return (
@@ -12,10 +13,21 @@ let updateCart= props.updateCart
                 <div className='cartPreviewName'>
                     {props.item.name}
                 </div>
-                <div className='cartPreviewPrice'>
-                    £{props.item.price}
+                <div className='cartPreviewQuantity'>
+                    x{props.item.quantity}
                 </div>
-                <div className='removeCartItem' onClick={(e) => RemoveCartItem(e,item, shoppingCart, updateCart)}>
+                <div className ='quantityButtons'>
+                    <div className ='quantityButton'>
+                        <span>+</span>
+                    </div>
+                    <div className ='quantityButton'>
+                        <span>-</span>
+                    </div>
+                </div>
+                <div className='cartPreviewPrice'>
+                    £{props.item.price*props.item.quantity} 
+                </div>
+                <div className='removeCartItem' onClick={(e) => DeleteItem(e,item, shoppingCart, updateCart)}>
                     X
                 </div>
             </div>

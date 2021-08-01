@@ -199,7 +199,7 @@ body {
     display: flex;
     flex-direction: row;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     justify-content: space-between;
 }
 
@@ -221,7 +221,7 @@ body {
 
     .logo {
         height:inherit;
-        width: 50%;
+        width: 10%;
         font-size: 2.8vw;
         font: 2.8vh;
         color: seashell;
@@ -271,7 +271,7 @@ body {
         }
 
     .cartPreviewDiv {
-        height: 31vh;
+        height: 100vh;
         width: 20vw;
         background-color: rgb(255, 245, 238);
         position: absolute;
@@ -282,6 +282,7 @@ body {
         border-color:black;
         border-top: none;
         flex-direction: column;
+        z-index: 3;
     }
 
         .cartItemsPreview {
@@ -289,6 +290,7 @@ body {
             width:inherit;
             display: flex;
             flex-direction: column;
+            z-index: inherit;
 
         }
 
@@ -299,15 +301,15 @@ body {
             flex-direction: row;
             margin-left: 5%;
             margin-right: 5%;
-            gap: 30%;
+            gap: 10%;
             align-items: center;
 
         }
 
             .removeCartItem {
-                height: 40%;
+                height: 42%;
                 color: black;
-                width: 9%;
+                width: 7%;
                 text-align: center;
                 border: solid;
                 border-color: black;
@@ -321,15 +323,46 @@ body {
                 color: seashell;
             }
 
+            .quantityButtons {
+                height: inherit;
+                width: 25%;
+                display: flex;
+                flex-direction: column;
+                gap: 10%;
+            }
+
+                .quantityButton {
+                    height: 50%;
+                    width: 20%;
+                    cursor: pointer;
+                    object-fit: cover;
+                    border: solid;
+                    border-color: black;
+                    text-align: center;
+                    border-width: 1px;
+
+                }
+
+                .quantityButton:hover {
+                    background-color: black;
+                    color: seashell;
+                }
+                
+
             .cartPreviewName {
                 height: inherit;
-                width: 20%;
+                width: 10%;
 
             }
 
             .cartPreviewPrice {
                 height: inherit;
-                width: 20%;
+                width: 10%;
+            }
+
+            .cartPreviewQuantity {
+                height: inherit;
+                width: 10%;
             }
 
         .cartPreviewItemFaded {

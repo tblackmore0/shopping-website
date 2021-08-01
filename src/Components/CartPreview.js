@@ -1,36 +1,49 @@
 import CartPreviewItem from "./CartPreviewItem";
 import CartPreviewItemFaded from "./CartPreviewItemFaded";
 import React, { useState } from 'react';
+import { itemsList } from "./Shop";
+import { hideModal } from "./ShopModals";
 
-function RemoveCartItem (e, item, shoppingCart, updateCart) {
+function DeleteItem (e, item, shoppingCart, updateCart) {
 
         let itemID = item.objectID
-        console.log(itemID)
 
         updateCart (shoppingCart.filter(item => item.objectID != itemID ))
-        console.log(shoppingCart) 
     }
 
 
-function ShowCartPreview (shoppingCart) {
+
+
+function ShowCartPreview () {
     let cartPreview = document.getElementById('cartPreview')
     cartPreview.style.display='flex';
+    const modalBackground = document.getElementById('modalBackground')
+    modalBackground.style.display = 'flex';
 }
 
-function HideCartPreview () {
+function HideCartPreview (e) {
+    const modalBackground = document.getElementById('modalBackground')
+    const navBar = document.getElementById('navBar')
+    const cartDiv = document.getElementById('cartDiv')
+    modalBackground.style.display = 'none'
     let cartPreview = document.getElementById('cartPreview')
     cartPreview.style.display='none';
 }
 
 function CartPreview (props) {
-    let lastItem = props.shoppingCart[props.shoppingCart.length - 1]
-    let secondLastItem = props.shoppingCart[props.shoppingCart.length - 2]
-    let thirdLastItem = props.shoppingCart[props.shoppingCart.length - 3]
-    let fourthLastItem = props.shoppingCart[props.shoppingCart.length - 4]
 
-   let cartSum = props.shoppingCart.reduce((sum, i) => sum + i.price, 0)
+    let shoppingCart = props.shoppingCart;
 
-    if (props.shoppingCart.length < 1) {
+    let lastItem = shoppingCart[shoppingCart.length - 1]
+    let secondLastItem = shoppingCart[shoppingCart.length - 2]
+    let thirdLastItem = shoppingCart[shoppingCart.length - 3]
+    let fourthLastItem = shoppingCart[shoppingCart.length - 4]
+
+   let cartSum = shoppingCart.reduce((sum, i) => sum + i.price, 0)
+
+   const cartPreview = document.getElementById('cartItemsPreview')
+
+    if (shoppingCart.length < 1) {
         return (
         <div className='emptyCart'>
             <span>Cart is Empty</span>
@@ -40,11 +53,11 @@ function CartPreview (props) {
 
     else {
     return (
-        <div className='cartItemsPreview'>
-            <CartPreviewItem updateCart={props.updateCart} shoppingCart={props.shoppingCart} item={lastItem}/>
-            <CartPreviewItem updateCart={props.updateCart} shoppingCart={props.shoppingCart} item={secondLastItem}/>
-            <CartPreviewItem updateCart={props.updateCart} shoppingCart={props.shoppingCart} item={thirdLastItem} />
-            <CartPreviewItemFaded updateCart={props.updateCart} shoppingCart={props.shoppingCart}  item={fourthLastItem} />
+        <div id='cartItemsPreview' className='cartItemsPreview'>
+            <CartPreviewItem updateCart={props.updateCart} shoppingCart={shoppingCart} item={lastItem}/>
+            <CartPreviewItem updateCart={props.updateCart} shoppingCart={shoppingCart} item={secondLastItem}/>
+            <CartPreviewItem updateCart={props.updateCart} shoppingCart={shoppingCart} item={thirdLastItem} />
+            <CartPreviewItemFaded updateCart={props.updateCart} shoppingCart={shoppingCart}  item={fourthLastItem} />
             <div className='cartTotal'>
                 £{cartSum}
             </div>
@@ -54,4 +67,4 @@ function CartPreview (props) {
     )
 }}
 
-export {ShowCartPreview, HideCartPreview, CartPreview, RemoveCartItem}
+export {ShowCartPreview, HideCartPreview, CartPreview, DeleteItem}
