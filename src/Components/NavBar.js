@@ -15,10 +15,10 @@ return (
                     Jaeger.
                 </Link>
             </div>
-        <div id='cartDiv' className='cartDiv' onClick={navBarHandler} /*onClick={(e) => ShowCartPreview(shoppingCart)} */  >
+        <div id='cartDiv' className='cartDiv' /* onClick={navBarHandler}*/  >
             <img id='shoppingCartImg' className='shoppingCart' src='siteImages/Basket.png' alt='shopping basket' />
             <span className='cartNumber'>{AddCart(shoppingCart)}</span>
-            <div id='cartPreview' className='cartPreviewDiv'>
+            <div id='cartPreview' className='cartPreviewDiv' >
                 <CartPreview shoppingCart={shoppingCart} updateCart={props.updateCart}/>
             </div>
         </div>
@@ -35,9 +35,10 @@ function AddCart (shoppingCart) {
 
 function navBarHandler (e) {
     let preview = document.getElementById('shoppingCartImg')
+    let cart = document.getElementById('cartPreview')
 
     if (e.target == preview) {
-        ShowCartPreview()
+        ShowCartPreview(e)
     }
 
     else {

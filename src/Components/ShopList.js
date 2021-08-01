@@ -32,6 +32,10 @@ function ShopList (props) {
 
         const modalBackground = document.getElementById('modalBackground')
 
+        const list = document.getElementById('modalList')
+
+        list.dataset.status = 'on'
+
            const mappedList = modalListArray.map(function (item) {
                 if (item.attributes.getNamedItem("data-key").value == ID) {
                 item.style.display = 'flex';

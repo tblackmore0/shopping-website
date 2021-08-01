@@ -9,7 +9,7 @@ let updateCart = props.updateCart;
 
     return (
         <div id ='modalBackground' onClick={backgroundHandler}>
-            <ul id='modalList'>
+            <ul id='modalList' data-status={'off'}>
               {props.items.map((item) => (
 
               <li className = 'itemModal' data-key={item.objectID}>
@@ -33,8 +33,10 @@ let updateCart = props.updateCart;
 
 function hideModal (e) {
     
-    const modalListArray = Array.from(document.getElementsByClassName('itemModal'))
-    const modalBackground = document.getElementById('modalBackground')
+    const modalListArray = Array.from(document.getElementsByClassName('itemModal'));
+    const modalBackground = document.getElementById('modalBackground');
+    const list = document.getElementById('modalList');
+    list.dataset.status = 'off'
 
         modalBackground.style.display = 'none'
 
@@ -45,14 +47,13 @@ function hideModal (e) {
 
 function backgroundHandler (e) {
 
-    console.log(e.target)
-
     const preview = document.getElementById('cartPreview')
     const modalBackground = document.getElementById('modalBackground')
     const navBar = document.getElementById('navBar')
     const cart = document.getElementById('cartDiv')
+    const logo = document.getElementById('logo')
 
-    if (e.target == modalBackground || (e.target == navBar && e.target != cart))  {
+    if (e.target == modalBackground || logo || (e.target == navBar && e.target != cart))  {
     hideModal(e);
     HideCartPreview(e);
 }}

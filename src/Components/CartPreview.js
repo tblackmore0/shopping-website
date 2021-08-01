@@ -1,5 +1,4 @@
 import CartPreviewItem from "./CartPreviewItem";
-import CartPreviewItemFaded from "./CartPreviewItemFaded";
 import React, { useState } from 'react';
 import { itemsList } from "./Shop";
 import { hideModal } from "./ShopModals";
@@ -12,32 +11,17 @@ function DeleteItem (e, item, shoppingCart, updateCart) {
     }
 
 
-
-
-function ShowCartPreview () {
-    let cartPreview = document.getElementById('cartPreview')
-    cartPreview.style.display='flex';
-    const modalBackground = document.getElementById('modalBackground')
-    modalBackground.style.display = 'flex';
-}
-
 function HideCartPreview (e) {
     const modalBackground = document.getElementById('modalBackground')
-    const navBar = document.getElementById('navBar')
-    const cartDiv = document.getElementById('cartDiv')
-    modalBackground.style.display = 'none'
     let cartPreview = document.getElementById('cartPreview')
+
+    modalBackground.style.display = 'none'
     cartPreview.style.display='none';
 }
 
 function CartPreview (props) {
 
     let shoppingCart = props.shoppingCart;
-
-    let lastItem = shoppingCart[shoppingCart.length - 1]
-    let secondLastItem = shoppingCart[shoppingCart.length - 2]
-    let thirdLastItem = shoppingCart[shoppingCart.length - 3]
-    let fourthLastItem = shoppingCart[shoppingCart.length - 4]
 
    let cartSum = shoppingCart.reduce((sum, i) => sum + i.price, 0)
 
@@ -54,10 +38,10 @@ function CartPreview (props) {
     else {
     return (
         <div id='cartItemsPreview' className='cartItemsPreview'>
-            <CartPreviewItem updateCart={props.updateCart} shoppingCart={shoppingCart} item={lastItem}/>
-            <CartPreviewItem updateCart={props.updateCart} shoppingCart={shoppingCart} item={secondLastItem}/>
-            <CartPreviewItem updateCart={props.updateCart} shoppingCart={shoppingCart} item={thirdLastItem} />
-            <CartPreviewItemFaded updateCart={props.updateCart} shoppingCart={shoppingCart}  item={fourthLastItem} />
+            {shoppingCart.map((item) => (
+            <CartPreviewItem updateCart={props.updateCart} shoppingCart={shoppingCart} item={item}/>
+            ))}
+
             <div className='cartTotal'>
                 £{cartSum}
             </div>
@@ -66,5 +50,35 @@ function CartPreview (props) {
 
     )
 }}
+
+function ShowCartPreview () {
+
+    const cartPreview = document.getElementById('cartPreview')
+    const modalBackground = document.getElementById('modalBackground')
+    const modals = document.getElementById('modalList')
+
+    if (modals.dataset.status === 'on') {
+        console.log('on')
+        if (cartPreview.style.display === 'none') {
+            cartPreview.style.display = 'flex';
+            modalBackground.style.display = 'flex';
+    }
+        else  {
+            cartPreview.style.display = 'none';
+}}
+
+    if (modals.dataset.status === 'off') {
+        console.log('off')
+        if (cartPreview.style.display === 'none') {
+            console.log('wtf')
+            cartPreview.style.display = 'flex';
+            modalBackground.style.display = 'flex';
+        }
+        else  {
+            cartPreview.style.display = 'none';
+            modalBackground.style.display = 'none';
+        }
+    }
+}
 
 export {ShowCartPreview, HideCartPreview, CartPreview, DeleteItem}
