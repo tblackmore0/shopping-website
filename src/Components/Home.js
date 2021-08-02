@@ -14,12 +14,6 @@ function Home () {
         </div>
     )};
 
-/* function changeStylesShop () {
-    document.getElementById('navBar').className='altNav'
-    document.getElementById('logo').className='altLogo'
-
-}
-*/
 
 
 export default Home;

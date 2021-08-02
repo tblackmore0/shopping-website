@@ -4,6 +4,7 @@ import Shop from './Components/Shop';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import {itemsList} from './Components/Shop'
+import Checkout from './Components/Checkout';
 
 
 
@@ -22,6 +23,9 @@ const [shoppingCart, updateCart] = React.useState([]);
           </Route>
           <Route path ="/shop">
             <Shop shoppingCart={shoppingCart} updateCart={updateCart}/>
+          </Route>
+          <Route path ="/checkout">
+            <Checkout shoppingCart={shoppingCart} updateCart={updateCart} />
           </Route>
         </Switch>
       </div>

@@ -2,6 +2,7 @@ import CartPreviewItem from "./CartPreviewItem";
 import React, { useState } from 'react';
 import { itemsList } from "./Shop";
 import { hideModal } from "./ShopModals";
+import {Link} from 'react-router-dom';
 
 function DeleteItem (item, shoppingCart, updateCart) {
 
@@ -46,8 +47,10 @@ function CartPreview (props) {
             <div className='cartTotal'>
                 £{cartSum(shoppingCart)}
             </div>
-            <div className='checkoutLink'>View Basket</div>
-        </div>
+                <Link to='/Checkout'>
+                    <div className='checkoutLink'>View Basket</div>
+                </Link>
+            </div>
         </div>
 
     )
