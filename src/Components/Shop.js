@@ -54,7 +54,7 @@ const itemsList =  [
         quantity: 0,
     },
     {
-        name: 'Hanging Chair',
+        name: 'Hanger',
         imageURL: 'itemImages/HangingChair.jpg',
         price: 60,
         objectID: 7,

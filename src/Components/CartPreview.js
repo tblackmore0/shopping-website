@@ -3,11 +3,14 @@ import React, { useState } from 'react';
 import { itemsList } from "./Shop";
 import { hideModal } from "./ShopModals";
 
-function DeleteItem (e, item, shoppingCart, updateCart) {
+function DeleteItem (item, shoppingCart, updateCart) {
 
-        let itemID = item.objectID
+        let itemToDelete = item
 
-        updateCart (shoppingCart.filter(item => item.objectID != itemID ))
+        itemToDelete.quantity = 0
+        
+        let newCart = shoppingCart.filter(item => item.objectID != itemToDelete.objectID )
+        updateCart(shoppingCart = newCart)
     }
 
 
@@ -22,8 +25,6 @@ function HideCartPreview (e) {
 function CartPreview (props) {
 
     let shoppingCart = props.shoppingCart;
-
-   let cartSum = shoppingCart.reduce((sum, i) => sum + i.price, 0)
 
    const cartPreview = document.getElementById('cartItemsPreview')
 
@@ -41,11 +42,12 @@ function CartPreview (props) {
             {shoppingCart.map((item) => (
             <CartPreviewItem updateCart={props.updateCart} shoppingCart={shoppingCart} item={item}/>
             ))}
-
+        <div className ='previewLinks'>
             <div className='cartTotal'>
-                £{cartSum}
+                £{cartSum(shoppingCart)}
             </div>
             <div className='checkoutLink'>View Basket</div>
+        </div>
         </div>
 
     )
@@ -58,7 +60,6 @@ function ShowCartPreview () {
     const modals = document.getElementById('modalList')
 
     if (modals.dataset.status === 'on') {
-        console.log('on')
         if (cartPreview.style.display === 'none') {
             cartPreview.style.display = 'flex';
             modalBackground.style.display = 'flex';
@@ -68,17 +69,22 @@ function ShowCartPreview () {
 }}
 
     if (modals.dataset.status === 'off') {
-        console.log('off')
         if (cartPreview.style.display === 'none') {
-            console.log('wtf')
+            console.log('we here')
             cartPreview.style.display = 'flex';
             modalBackground.style.display = 'flex';
         }
         else  {
+            console.log('no we here')
             cartPreview.style.display = 'none';
             modalBackground.style.display = 'none';
         }
     }
 }
 
-export {ShowCartPreview, HideCartPreview, CartPreview, DeleteItem}
+function cartSum (shoppingCart) {
+    let cart = shoppingCart.reduce((sum, i) => sum + i.price*i.quantity, 0)
+    return cart
+}
+
+export {ShowCartPreview, HideCartPreview, CartPreview, DeleteItem, cartSum}

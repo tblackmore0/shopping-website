@@ -34,25 +34,35 @@ body {
 }
 
     .shopLinkContainer {
-        height: 5vh;
+        height: 6.5vh;
         width: 10vw;
         position: absolute;
         left: 28vw;
         bottom: 23.5vw;
+        box-sizing: border-box;
     }
 
         .shopLink {
             font-size: 25px;
             text-align: center;
-            padding-top: 1vh;
-            padding-bottom: 0.5vh;
-            height: inherit;
             width: inherit;
+            height: inherit;
             background: black;
             color: seashell;
+            box-sizing: border-box;
+            padding-top: 5%;
+            position: sticky;
 
        }
 
+       .shopLink:hover {
+        border: solid;
+        border-color: seashell;
+        margin: 0;
+        padding-top: 2.5%;
+        
+    }
+    
 .shop {
     height: 100%;
     width: 100%;
@@ -245,7 +255,13 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
+        box-sizing: border-box;
     }
+
+    .cartDiv:hover {
+        cursor: pointer;
+    }
+
 
         .shoppingCart {
             width: 70%;
@@ -254,9 +270,6 @@ body {
 
         }
 
-        .shoppingCart:hover {
-            cursor: pointer;
-        }
 
         .cartNumber {
             font-size: 1.5vw;
@@ -266,55 +279,63 @@ body {
             padding-right: 15%;
         }
 
-        .cartNumber:hover {
-            cursor: pointer;
-        }
-
     .cartPreviewDiv {
-        height: 100vh;
-        width: 20vw;
+        height: 92vh;
+        width: 25vw;
         background-color: rgb(255, 245, 238);
         position: absolute;
         display: none;
-        left: 80vw;
+        left: 75vw;
         top: 8vh;
         border: solid;
         border-color:black;
         border-top: none;
         flex-direction: column;
         z-index: 3;
+        overflow-y: hidden ;
+        overflow-x: hidden;
+        
+    }
+
+    .cartPreviewDiv:hover {
+        cursor: default;
     }
 
         .cartItemsPreview {
             height: inherit;
-            width:inherit;
+            width: 100%;
             display: flex;
             flex-direction: column;
             z-index: inherit;
-
+            gap: 5%;
+            align-items: center;
+            padding-top: 4vh;
+            padding-bottom: 15vh;
+            overflow-y: auto;
         }
 
         .cartPreviewItem {
-            height: 20%;
-            width: 90%;
+            height: 10vh;
+            width: 80%;
             display: flex;
             flex-direction: row;
-            gap: 5%;
+            gap: 0%;
             align-items: center;
             border-color:black;
-            border-bottom: solid;
+            border:solid;
+            align-content: center;
+            justify-content: center;
 
         }
 
             .removeCartItem {
-                height: 42%;
+                height: 25%;
                 color: black;
-                width: 7%;
+                width: 4.5%;
                 text-align: center;
                 border: solid;
                 border-color: black;
                 border-width: 1px;
-                margin-right: 5%;
                 cursor: pointer;
             }
             
@@ -325,21 +346,24 @@ body {
 
             .quantityButtons {
                 height: inherit;
-                width: 25%;
+                width: 15%;
                 display: flex;
                 flex-direction: column;
                 gap: 10%;
+                align-items: center;
+                justify-content: center;
             }
 
                 .quantityButton {
-                    height: 50%;
-                    width: 20%;
+                    height: 22%;
+                    width: 25%;
                     cursor: pointer;
                     object-fit: cover;
                     border: solid;
                     border-color: black;
                     text-align: center;
                     border-width: 1px;
+                    display: flex;
 
                 }
 
@@ -347,35 +371,54 @@ body {
                     background-color: black;
                     color: seashell;
                 }
+
                 
+                .quantityTextPlus{
+                    padding-left: 7%;
+
+                }
+
+                .quantityTextMinus{
+                    padding-left: 25%;
+
+                }
+            
+            .itemFirstSection {
+                height: 60%;
+                width: 35%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .cartPreviewNameDiv {
+                height:100%;
+                width:70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-content: center;
+            }
 
             .cartPreviewName {
-                height: inherit;
-                width: 10%;
+                height: 50%;
+                width: 100%;
+                font-size: 2.4vh;
 
             }
 
             .cartPreviewPrice {
-                height: inherit;
-                width: 10%;
+                height: 28%;
+                width: 20%;
+                text-align: center;
+
             }
 
             .cartPreviewQuantity {
-                height: inherit;
-                width: 10%;
+                height: 50%;
+                width: 30%;
+                font-size: 2.5vh;
             }
-
-        .cartPreviewItemFaded {
-            height: 6%;
-            width: 90%;
-            display: flex;
-            flex-direction: row;
-            margin-left: 5%;
-            margin-right: 5%;
-            opacity: 50%;
-            gap: 30%;
-            z-index: 1;
-        }
         
 
         .checkoutLink {
@@ -386,8 +429,9 @@ body {
             color: seashell;
             cursor: pointer;
             text-align: center;
-            height: 7%;
+            height: 10vh;
             z-index: 3;
+            width: 100%;
         }
 
         .emptyCart {
@@ -399,13 +443,20 @@ body {
         }
 
         .cartTotal {
-            height: 3%;
+            height: 3vh;
             width: 100%;
             border-top: solid;
             border-color: black;
             text-align: center;
             z-index: 2;
             background-color: seashell;
+        }
+
+        .previewLinks {
+            position: absolute;
+            width: 26vw;
+            top: 86%;
+
         }
 
 a {

@@ -13,7 +13,7 @@ let updateCart = props.updateCart;
               {props.items.map((item) => (
 
               <li className = 'itemModal' data-key={item.objectID}>
-                <img className = 'modalImage' src={item.imageURL} alt='why not work'></img>
+                <img className = 'modalImage' src={item.imageURL} alt={item.name}></img>
                 <div className = 'modalDiv'>
                     <span className='modalTitle'>{item.name}</span>
                     <p className='modalText'>{item.description}</p>
@@ -53,7 +53,7 @@ function backgroundHandler (e) {
     const cart = document.getElementById('cartDiv')
     const logo = document.getElementById('logo')
 
-    if (e.target == modalBackground || logo || (e.target == navBar && e.target != cart))  {
+    if (e.target == modalBackground || e.target == logo || (e.target == navBar && e.target != cart))  {
     hideModal(e);
     HideCartPreview(e);
 }}
