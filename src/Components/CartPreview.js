@@ -39,7 +39,7 @@ function CartPreview (props) {
 
     else {
     return (
-        <div id='cartItemsPreview' className='cartItemsPreview'>
+        <div id='cartItemsPreview' className='cartItemsPreview cartItemsScroll'>
             {shoppingCart.map((item) => (
             <CartPreviewItem updateCart={props.updateCart} shoppingCart={shoppingCart} item={item}/>
             ))}
@@ -47,7 +47,7 @@ function CartPreview (props) {
             <div className='cartTotal'>
                 £{cartSum(shoppingCart)}
             </div>
-                <Link to='/Checkout'>
+                <Link to='/Checkout' updateCart={props.updateCart} shoppingCart={shoppingCart} >
                     <div className='checkoutLink'>View Basket</div>
                 </Link>
             </div>
@@ -73,12 +73,10 @@ function ShowCartPreview () {
 
     if (modals.dataset.status === 'off') {
         if (cartPreview.style.display === 'none') {
-            console.log('we here')
             cartPreview.style.display = 'flex';
             modalBackground.style.display = 'flex';
         }
         else  {
-            console.log('no we here')
             cartPreview.style.display = 'none';
             modalBackground.style.display = 'none';
         }

@@ -13,7 +13,7 @@ function ShopList (props) {
               <li >
                   <div className = 'itemCard' onClick={ShowItemModal} data-key={item.objectID} key={item.objectID}>
                     <img className = 'itemImage' src={item.imageURL} alt='why not work' data-key={item.objectID}></img>
-                    <span data-key={item.objectID}>{item.name}</span>
+                    <span className='itemTitle' data-key={item.objectID}>{item.name}</span>
                   </div>
               </li>
 

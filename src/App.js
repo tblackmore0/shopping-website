@@ -4,7 +4,7 @@ import Shop from './Components/Shop';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import {itemsList} from './Components/Shop'
-import Checkout from './Components/Checkout';
+import {Checkout} from './Components/Checkout';
 
 
 

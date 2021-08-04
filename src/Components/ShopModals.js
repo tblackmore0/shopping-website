@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PushToCart from './PushToCart';
 import { HideCartPreview } from './CartPreview';
+import {useRef} from 'react';
+
 
 function ShopModals (props) {
 
@@ -8,28 +10,51 @@ let shoppingCart = props.shoppingCart;
 let updateCart = props.updateCart;
 
     return (
-        <div id ='modalBackground' onClick={backgroundHandler}>
+        
+            <React.Fragment>
             <ul id='modalList' data-status={'off'}>
               {props.items.map((item) => (
 
-              <li className = 'itemModal' data-key={item.objectID}>
+              <li className ={modalPosition(item)} data-key={item.objectID}>
                 <img className = 'modalImage' src={item.imageURL} alt={item.name}></img>
                 <div className = 'modalDiv'>
                     <span className='modalTitle'>{item.name}</span>
-                    <p className='modalText'>{item.description}</p>
+                    <div className='modalTextDiv'>
+                    <p className='modalText'>{item.description1}</p>
+                    <p className='modalText'>{item.description2}</p>
+                    </div>
                     <div className='addToCart'>
-                        <input type='number' step='1' placeholder='1'></input>
-                        <button onClick={(e) => PushToCart(e, shoppingCart, updateCart)} data-key={item.objectID}>Add to cart</button>
+                        <form className='cartForm' onSubmit={(e) => PushToCart(e, shoppingCart, updateCart)} data-key={item.objectID}>
+                            <input className = 'input' type='number' step='1' placeholder='1' />
+                            <button className='addToCartButton'>Add to cart</button>
+                        </form>
                     </div> 
                 </div>
               </li>
 
               ))}
             </ul>
-        
-        </div>
+            <div id ='modalBackground' onClick={backgroundHandler}>
+            </div>
+            </React.Fragment>
+            
 
     )};
+
+function modalPosition (item) {
+    if (item.objectID <3 ) {
+        return 'itemModal itemModalTop'
+    }
+
+    if (item.objectID <6) {
+        return 'itemModal itemModalMid'
+    }
+
+    if (item.objectID <9) {
+        return 'itemModal itemModalBottom'
+    }
+}
+
 
 function hideModal (e) {
     
