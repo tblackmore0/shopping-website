@@ -1,7 +1,7 @@
 import Home from './Components/Home';
 import {NavBar} from './Components/NavBar';
 import Shop from './Components/Shop';
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {HashRouter as Router, Switch, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import {itemsList} from './Components/Shop'
 import {Checkout} from './Components/Checkout';
