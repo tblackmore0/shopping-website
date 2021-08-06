@@ -18,13 +18,13 @@ const [shoppingCart, updateCart] = React.useState([]);
       <div className='window'>
         <NavBar shoppingCart={shoppingCart} updateCart={updateCart}/>
         <Switch>
-          <Route path ="/" exact>
+          <Route path ="/shopping-website/" exact>
             <Home />
           </Route>
-          <Route path ="/shop">
+          <Route path ="/shopping-website/shop">
             <Shop shoppingCart={shoppingCart} updateCart={updateCart}/>
           </Route>
-          <Route path ="/checkout">
+          <Route path ="/shopping-website/checkout">
             <Checkout shoppingCart={shoppingCart} updateCart={updateCart} />
           </Route>
         </Switch>

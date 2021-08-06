@@ -284,7 +284,7 @@ body {
 .navbar {
     height: 8vh;
     width: 100vw;
-    background-color: black;
+    background-color: red;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
