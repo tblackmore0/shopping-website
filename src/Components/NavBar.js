@@ -13,7 +13,7 @@ let shoppingCart = props.shoppingCart
 return (
     <div className='navbar' id='navBar' onClick={navBarHandler}>
             <div className='logo' id='logo'>
-                <Link to='/'>
+                <Link to="/">
                     <p className = 'logoText'> Jaeger. </p>
                 </Link>
             </div>

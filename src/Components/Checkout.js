@@ -10,7 +10,7 @@ function Checkout () {
         <div id='checkoutPage' className='checkoutPage'>
             <div className='checkoutImg' />
             <img id='returnArrow' className='returnArrow' src='siteImages/Arrow.png' alt='return to shop'/>
-            <Link to='/Shop'>
+            <Link to="/shop">
             <div className ='returnToShop' onMouseEnter={addHover} onMouseOut={removeHover}>
                 Return to Shop
             </div>

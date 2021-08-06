@@ -47,7 +47,7 @@ function CartPreview (props) {
             <div className='cartTotal'>
                 £{cartSum(shoppingCart)}
             </div>
-                <Link to='/Checkout' updateCart={props.updateCart} shoppingCart={shoppingCart} >
+                <Link to="/checkout" updateCart={props.updateCart} shoppingCart={shoppingCart} >
                     <div className='checkoutLink'>View Basket</div>
                 </Link>
             </div>
