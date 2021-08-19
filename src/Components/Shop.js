@@ -6,6 +6,7 @@ const itemsList =  [
     {
         name: 'Stül',
         imageURL: 'itemImages/Stool.jpg',
+        alt: 'Two wooden stools with three legs each',
         price: 40,
         objectID: 0,
         quantity: 0,
@@ -17,6 +18,7 @@ const itemsList =  [
     {
         name: 'Stande',
         imageURL: 'itemImages/Stand.jpg',
+        alt: 'A small, voided, wooden stand with four legs.',
         price: 65,
         objectID: 1,
         quantity: 0,
@@ -28,6 +30,7 @@ const itemsList =  [
     {
         name: 'Chaer',
         imageURL: 'itemImages/Chair.jpg',
+        alt:'Two tall-backed wooden chairs.',
         price: 50,
         objectID: 2,
         quantity: 0,
@@ -39,6 +42,7 @@ const itemsList =  [
     {
         name: 'Shelve',
         imageURL: 'itemImages/Shelf.jpg',
+        alt: 'A plain wooden shelf with metal supports.',
         price: 30,
         objectID: 3,
         quantity: 0,
@@ -50,6 +54,7 @@ const itemsList =  [
     {
         name: 'Klök',
         imageURL: 'itemImages/Clock.jpg',
+        alt: 'A natural wooden clock with white hands and numbers.',
         price: 30,
         objectID: 4,
         quantity: 0,
@@ -61,6 +66,7 @@ const itemsList =  [
     {
         name: 'Taabel',
         imageURL: 'itemImages/Table.jpg',
+        alt: 'A rough-finish, large wooden table with dark metal legs.',
         price: 110,
         objectID: 5,
         quantity: 0,
@@ -72,6 +78,7 @@ const itemsList =  [
     {
         name: 'Shelve II',
         imageURL: 'itemImages/Shelf2.jpg',
+        alt: 'A wooden shelf in the shape of a voided triangle.',
         price: 30,
         objectID: 6,
         quantity: 0,
@@ -83,6 +90,7 @@ const itemsList =  [
     {
         name: 'Hangur',
         imageURL: 'itemImages/HangingChair.jpg',
+        alt: 'A lounger/chair sat in wooden supports and suspended from the roof with rope.',
         price: 60,
         objectID: 7,
         quantity: 0,
@@ -94,6 +102,7 @@ const itemsList =  [
     {
         name: 'Taabel II',
         imageURL: 'itemImages/Table2.jpg',
+        alt: 'A set of three small, two-legged tables that fit inside one another.',
         price: 80,
         objectID: 8,
         quantity: 0,
@@ -107,6 +116,7 @@ const itemsList =  [
 
 function Shop (props) {
 
+    console.log(window.location.pathname)
 
     return (
         <div className='shop'>

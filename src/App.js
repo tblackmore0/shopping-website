@@ -12,19 +12,26 @@ function App() {
 
 const [shoppingCart, updateCart] = React.useState([]);
 
+/* setTimeout(function () {
+  let viewheight = window.height;
+  let viewwidth = window.width;
+  let viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute("content", "height=" + viewheight + "px, width=" + viewwidth + "px, initial-scale=1.0");
+}, 300); */
+
 
   return (
     <Router >
       <div className='window'>
         <NavBar shoppingCart={shoppingCart} updateCart={updateCart}/>
         <Switch>
-          <Route path ="/shopping-website/" exact>
+          <Route path ="/" exact>
             <Home />
           </Route>
-          <Route path ="/shopping-website/shop">
+          <Route path ="/shop">
             <Shop shoppingCart={shoppingCart} updateCart={updateCart}/>
           </Route>
-          <Route path ="/shopping-website/checkout">
+          <Route path ="/checkout">
             <Checkout shoppingCart={shoppingCart} updateCart={updateCart} />
           </Route>
         </Switch>

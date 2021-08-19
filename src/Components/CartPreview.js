@@ -47,7 +47,7 @@ function CartPreview (props) {
             <div className='cartTotal'>
                 £{cartSum(shoppingCart)}
             </div>
-                <Link to="/shopping-website/checkout" updateCart={props.updateCart} shoppingCart={shoppingCart} >
+                <Link to="/checkout" updateCart={props.updateCart} shoppingCart={shoppingCart} >
                     <div className='checkoutLink'>View Basket</div>
                 </Link>
             </div>
@@ -59,10 +59,18 @@ function CartPreview (props) {
 function ShowCartPreview () {
 
     const cartPreview = document.getElementById('cartPreview')
-    const modalBackground = document.getElementById('modalBackground')
-    const modals = document.getElementById('modalList')
+    const modalBackground = document.getElementById('modalBackground');
+    const modalBackgroundHome = document.getElementById('modalBackgroundHome');
+    const modals = document.getElementById('modalList');
+    const home = document.getElementById('home')
 
-    if (modals.dataset.status === 'on') {
+    if(home) {
+        cartPreview.style.display = 'flex';
+        modalBackgroundHome.style.display = 'flex';
+        return
+    }
+
+    else if (modals.dataset.status === 'on') {
         if (cartPreview.style.display === 'none') {
             cartPreview.style.display = 'flex';
             modalBackground.style.display = 'flex';

@@ -29,11 +29,13 @@ let updateCart= props.updateCart
                         <span className='quantityTextMinus'>-</span>
                     </div>
                 </div>
+                <div className = 'endSection'>
                 <div className='cartPreviewPrice'>
                     £{props.item.price*props.item.quantity} 
                 </div>
                 <div className='removeCartItem' onClick={(e) => DeleteItem(item, shoppingCart, updateCart)}>
                     X
+                </div>
                 </div>
             </div>
 

@@ -13,8 +13,8 @@ let shoppingCart = props.shoppingCart
 return (
     <div className='navbar' id='navBar' onClick={navBarHandler}>
             <div className='logo' id='logo'>
-                <Link to="/shopping-website/">
-                    <p className = 'logoText'> Jaeger. </p>
+                <Link to="/">
+                    <p id='logoText' className = 'logoText'> Jaeger. </p>
                 </Link>
             </div>
         <div id='cartDiv' className='cartDiv' >
@@ -41,10 +41,19 @@ function navBarHandler (e) {
     let cart = document.getElementById('cartPreview')
     let checkout = document.getElementById('checkoutPage')
     let home = document.getElementById('home')
+    let logo = document.getElementById('logoText');
 
-    console.log(e.target)
+    if (e.target == logo) {
+        if (cart) {
+            cart.style.display = 'none';
+            return;
+        }
+    
+    return 
+}
 
-    if (e.target == preview || e.target == img|| e.target == number) {
+    if (e.target == preview || e.target == img|| e.target == number || e.target == logo) {
+
         if (checkout || home) {
             toggleCartCheckout();
         } else {

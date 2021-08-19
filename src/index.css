@@ -18,6 +18,15 @@
       height: 60%;
   }
 
+  @media only screen and (max-width: 500px) {
+
+    .window {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+    
+  }
 
 
 ul li {
@@ -56,6 +65,7 @@ body {
     justify-content: center;
     overflow: hidden;
     box-sizing: border-box;
+    border-radius: 0.5px;
 }
 
     .shopLinkContainer {
@@ -63,12 +73,13 @@ body {
         width: 10vw;
         position: absolute;
         left: 28vw;
-        bottom: 23.5vw;
+        bottom: 48.5vh;
         box-sizing: border-box;
     }
 
         .shopLink {
-            height: 6vh;
+            height: 6.5vh;
+            width: inherit;
             text-align: center;
             background: black;
             color: seashell;
@@ -79,8 +90,19 @@ body {
 }
 
         .shopLinkText {
-            font-size: 3.5vh;
+            font-size: 1.7vw;
+            
         }
+
+            @media only screen and (max-width: 500px) {
+                .shopLinkText {
+                    font-size: 7vw;
+                }
+
+                .shopLinkContainer {
+                    width: 40vw;
+                }
+            }
 
        .shopLink:hover {
         border: solid;
@@ -154,6 +176,36 @@ body {
         .itemTitle {
             font-size: 2.5vh;
         }
+
+        @media only screen and (max-width: 500px) {
+
+            .shop {
+                margin-top: 0;
+                height: 100vh;
+                
+            }
+
+            .shopWindow {
+                width: 90vw;
+                height: 75vh;
+
+            }
+
+            .shopGrid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 50%);
+                width: 90vw;
+                gap: 2%;
+            }
+
+            .itemImage { 
+                width: 40vw;
+                height: 25vh;
+                border-radius: 0.5px;
+
+            }
+
+        }
     
     #modalBackground {
         display: none;
@@ -166,9 +218,21 @@ body {
         padding-right: 0;
     }
 
+    #modalBackgroundHome {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        overflow: hidden;
+        padding-right: 0;
+    }
+
         .itemModal {
+            bottom: 10%;
             display: none;
-            position: absolute;
+            position: fixed;
             width: 50vw;
             background-color: seashell;
             border: black;
@@ -178,17 +242,6 @@ body {
             height: 70vh;
         }
 
-        .itemModalTop {
-            top:10%;
-        }
-
-        .itemModalMid {
-            top: 40%;
-        }
-
-        .itemModalBottom {
-            top: 70%;
-        }
 
         .modalImage {
             width: 50%;
@@ -278,13 +331,70 @@ body {
             border-color: seashell;
         }
 
+
+        @media only screen and (max-width: 500px) {
+
+            img {
+                border-radius: 0.5px;
+            }
+
+            #modalBackground {
+                height: 270vh;
+            }
+
+            .itemModal{
+                flex-direction: column;
+                width: 70vw;
+                right: 25%;
+                left: 15%;
+            }
+
+            .modalImage {
+                border-radius: 0.5px;
+                width: 100%;
+                height: 50%;
+            }
+
+            .modalDiv {
+                width: 100%;
+                height: 50%;
+            }
+
+            .modalTextDiv {
+                width: 90%;
+                height: 75vh;
+            }
+
+            .modalText {
+                font-size: 3.15vw;
+            }
+
+            .modalTitle {
+                font-size: 6.5vw;
+            }
+
+            .cartForm {
+                flex-direction: row;
+            }
+
+            .addToCartButton {
+                width: 20vw;
+                height: 3.5vh;
+                font-size: 3.1vw;
+            }
+
+            .input {
+                height: 2.6vh;
+                font-size: 3.1vw;
+            }
+        }
    
 
 
 .navbar {
     height: 8vh;
     width: 100vw;
-    background-color: red;
+    background-color: black;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -318,12 +428,13 @@ body {
     }
 
     .logoText {
-        font-size: 5vh;
+        font-size: 2.8vw;
         margin: 0;
         padding: 0;
         padding-left: 2vw;
         padding-top: 1vh;
     }
+
 
     .cartDiv {
         height:inherit;
@@ -356,8 +467,29 @@ body {
             padding-right: 15%;
         }
 
+        @media only screen and (max-width: 500px) {
+            .logo {
+                width: 40vw;
+            }
+    
+            .logoText {
+                font-size: 9.5vw;
+            }
+    
+            .cartDiv {
+                width: 20vw;
+            }
+    
+            .cartNumber {
+                font-size: 6vw;
+            }
+            
+
+
+        }
+
     .cartPreviewDiv {
-        height: 92vh;
+        height: 100vh;
         width: 25vw;
         background-color: rgb(255, 245, 238);
         position: absolute;
@@ -405,18 +537,36 @@ body {
 
         }
 
+        @media only screen and (max-width: 500px) {
+            .cartPreviewDiv {
+                width: 50vw;
+                left: 50.3%;
+            }
+        }
+
             .removeCartItem {
-                height: 25%;
+                height: 2.5vh;
                 color: black;
-                width: 4.5%;
+                width: 4vw;
                 text-align: center;
                 border: solid;
                 border-color: black;
                 border-width: 1px;
                 cursor: pointer;
             }
+
+            .cartPreviewPrice {
+                width: 100%;
+                font-size: 3.8vw;
+            }
             
+
             .removeCartItem:hover {
+                background-color: seashell;
+                color: black;
+            }
+
+            .removeCartItem:focus {
                 background-color: black;
                 color: seashell;
             }
@@ -485,8 +635,8 @@ body {
             }
 
             .cartPreviewPrice {
-                height: 28%;
-                width: 20%;
+                height: 2vh;
+                width: 5vw;
                 text-align: center;
 
             }
@@ -532,8 +682,63 @@ body {
         .previewLinks {
             position: absolute;
             width: 26vw;
-            top: 86%;
+            top: 79%;
 
+        }
+
+        .endSection {
+            display: flex;
+            flex-direction: column;
+            height: 80%;
+            width: 20%;
+            justify-content: center;
+            align-items: center;
+            gap: 20%;
+        }
+
+        @media only screen and (max-width: 500px) {
+
+
+            .previewLinks {
+                width: 50vw;
+            }
+
+            .cartPreviewName {
+               font-size: 3.6vw;
+            }
+
+            .cartPreviewQuantity {
+                font-size: 3.8vw;
+            }
+
+            .itemFirstSection {
+                flex-direction: column;
+                width: 40%;
+                height: 60%;
+                text-align: center;
+            }
+
+            .cartPreviewNameDiv {
+                flex-direction: row;
+            }
+
+            .quantityButtons {
+                width: 10vw;
+            }
+
+            .quantityButton:hover {
+                background-color: seashell;
+                color: black;
+            }
+
+            .quantityButton:focus {
+                background-color: black;
+                color: seashell;
+            }
+
+            .endSection {
+                width: 10vw;
+            }
         }
 
 a {
@@ -612,5 +817,34 @@ a {
 @keyframes pulse {
     100% {
         transform:translateX(10px);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .checkoutPage {
+        justify-content: center;
+    }
+
+    .checkoutImg {
+        border-radius: 0.5px;
+    }
+
+
+    .checkoutInfo {
+        height: 10vh;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .returnToShop {
+        display: none;
+    }
+
+    .returnArrow {
+        left: 1%;
+        top: 72vh;
+        width: 6vw;
+        padding: 6%;
     }
 }

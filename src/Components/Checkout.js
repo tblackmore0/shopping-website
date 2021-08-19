@@ -9,9 +9,11 @@ function Checkout () {
     
         <div id='checkoutPage' className='checkoutPage'>
             <div className='checkoutImg' />
-            <img id='returnArrow' className='returnArrow' src='siteImages/Arrow.png' alt='return to shop'/>
-            <Link to="/shopping-website/shop">
-            <div className ='returnToShop' onMouseEnter={addHover} onMouseOut={removeHover}>
+            <Link to="/shop">
+            <img id='returnArrow' className='returnArrow  returnArrowHover' src='siteImages/Arrow.png' alt='return to shop'/>
+            </Link>
+            <Link to="/shop">
+            <div className ='returnToShop' /* onMouseEnter={addHover} onMouseOut={removeHover} */>
                 Return to Shop
             </div>
             </Link>
@@ -38,8 +40,25 @@ function removeHover () {
 function toggleCartCheckout () {
     const cartPreview = document.getElementById('cartPreview')
     const modalBackground = document.getElementById('modalBackground')
+    const modalBackgroundHome = document.getElementById('modalBackgroundHome');
+    const home = document.getElementById('home')
 
-    if (cartPreview.style.display === 'none') {
+ //   console.log(window.location.href.pathname === ("/shopping-website#/"))
+ //   console.log(window.location.pathname);
+
+    if(home) {
+        if (cartPreview.style.display === 'none') {
+            cartPreview.style.display = 'flex';
+            modalBackgroundHome.style.display = 'flex';
+        } else {
+            cartPreview.style.display = 'none'
+            modalBackgroundHome.style.display = 'none';
+        } 
+            
+        return
+    }
+
+    else if (cartPreview.style.display === 'none') {
         cartPreview.style.display = 'flex';
         modalBackground.style.display = 'flex';
     } else {
@@ -49,12 +68,25 @@ function toggleCartCheckout () {
 }
 
 function checkoutBackgroundHandler (e) {
+
+            
     const cartPreview = document.getElementById('cartPreview')
     const modalBackground = document.getElementById('modalBackground')
+    const modalBackgroundHome = document.getElementById('modalBackgroundHome');
+    const home = document.getElementById('home')
+
+
+    if(home) {
+
+    cartPreview.style.display = 'none'
+    modalBackgroundHome.style.display = 'none'
+    return
+
+    } else {
 
     cartPreview.style.display = 'none'
     modalBackground.style.display = 'none'
-}
+}}
 
 function checkoutTransition () {
     const cartPreview = document.getElementById('cartPreview')

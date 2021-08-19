@@ -12,11 +12,17 @@ function Home () {
                     </div>
                 </div>
             </Link>
-            <div id ='modalBackground' onClick={checkoutBackgroundHandler}>
+            <div id ='modalBackgroundHome' onClick={homeBackgroundHandler}>
             </div>
         </div>
     )};
 
-
+    function homeBackgroundHandler (e) {
+        const cartPreview = document.getElementById('cartPreview')
+        const modalBackground = document.getElementById('modalBackgroundHome')
+    
+        cartPreview.style.display = 'none'
+        modalBackground.style.display = 'none'
+    }
 
 export default Home;
