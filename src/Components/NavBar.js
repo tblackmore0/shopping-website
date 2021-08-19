@@ -11,6 +11,7 @@ function NavBar (props) {
 let shoppingCart = props.shoppingCart
 
 return (
+    <React.Fragment>
     <div className='navbar' id='navBar' onClick={navBarHandler}>
             <div className='logo' id='logo'>
                 <Link to="/">
@@ -20,13 +21,16 @@ return (
         <div id='cartDiv' className='cartDiv' >
             <img id='shoppingCartImg' className='shoppingCart' src='siteImages/Basket.png' alt='shopping basket' />
             <span id='cartNumber' className='cartNumber'>{AddCart(shoppingCart)}</span>
-            <div id='cartPreview' className='cartPreviewDiv' style={{display: 'none'}}>
-                <CartPreview shoppingCart={shoppingCart} updateCart={props.updateCart}/>
-            </div>
+            
         </div>
 
         
     </div>
+
+<div id='cartPreview' className='cartPreviewDiv' style={{display: 'none'}}>
+<CartPreview shoppingCart={shoppingCart} updateCart={props.updateCart}/>
+</div>
+</React.Fragment>
 )};
 
 function AddCart (shoppingCart) {
