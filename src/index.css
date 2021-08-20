@@ -1,3 +1,7 @@
+* {
+    font-family: 'Urbanist', sans-serif;
+}
+
 ::-webkit-scrollbar {
     width: 1vmax;
     
@@ -34,10 +38,6 @@ ul li {
     list-style-type: none;
 }
 
-* {
-    font-size: 2.2vh;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -60,90 +60,91 @@ body {
 .home {    
     width: 100vw;
     height: 100vh;
-    background-image: url("./Images/Home2.jpg");
-    background-size: cover;
+    background-color: rgb(46, 80, 78);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
     box-sizing: border-box;
     border-radius: 0.5px;
 }
 
-    .shopLinkContainer {
-        height: 6vh;
-        width: 10vw;
+    .homeText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        height: 50vh;
 
-        position: absolute;
-        left: 28vw;
-        bottom: 48.5vh;
-        box-sizing: border-box;
     }
 
-        .shopLink {
-            height: 6.5vh;
-            min-height: 50px;
-            min-width: 80px;
-            width: inherit;
-            text-align: center;
-            background: black;
-            color: seashell;
-            box-sizing: border-box;
-            position: sticky;
-            padding-top: 1.5vh;
-            padding-bottom: 3vmax;
+    .homeP {
+        color: rgba(255, 245, 238, 0.85);
+        font-size: 1.2vmax;
+        height: 7vh;
 
-}
+    }
 
-        .shopLinkText {
-            font-size: 1.7vmax;
-            
-
-        }
+    .homeTitle {
+        color: seashell;
+        font-size: 2.7vmax;
+        height: 3vh;
+    }
 
 
-            @media only screen and (min-width: 501px) and (max-width: 1200px) {
-                .shopLinkText {
-                    font-size: 2vmax;
-                    
-                }
 
-                .shopLinkContainer {
-                    width: 10vmax;
-                    height: 4vmax;
-                    min-height: 25px;
+    .homeImage {
+        width: 50vw;
+        height: 92vh;
+        object-fit: cover;
+        margin-top: 8vh;
+    }
 
 
-                }
 
-                .shopLink {
-                    height: inherit;
-                    width: inherit;
-                    min-height: inherit;
-                    min-width: inherit;
-                    padding-bottom: 4vh;
-                    
+    .shopLink{
+        width: 9vw;
+        height: auto;
+        max-height: 60px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        border: 2px solid seashell;
+        background: linear-gradient(to left, rgb(46, 80, 78) 50%, seashell 0%) right;
+        background-size: 200%;
+        transition: .5s ease-out;
+        box-sizing: border-box;
+        margin: 0;
+        
+    }
 
-                    
-                }
-            }
 
-            @media only screen and (max-width: 500px) {
-                .shopLinkText {
-                    font-size: 7vw;
+    .shopLink:hover {
 
-                }
+        cursor: pointer;
+        background-position:left;
+        color: rgb(46, 80, 78);
+        margin: 0;  
+        padding: 0;      
 
-                .shopLinkContainer {
-                    width: 40vw;
-                    
-                }
-            }
+    }
+
+    .shopLinkText {
+        font-size: 1vmax;
+        height: inherit;
+        width: inherit;
+
+
+
+    }
+        
+
+
 
        .shopLink:hover {
-        border: solid;
-        border-color: seashell;
-        padding-top: 1.2vh;
+        border-width: 3px;
         
     }
     
@@ -366,7 +367,7 @@ body {
         }
 
         .modalText {
-            font-size: 2.3vmin;
+            font-size: 2vmin;
          
 
         }
@@ -455,7 +456,7 @@ body {
             }
 
             .modalTitle {
-                font-size: 3.8vmax;
+                font-size: 3vmax;
                 margin:0;
                 height: 17%;
                 margin-top: 2%;
@@ -555,7 +556,7 @@ body {
     height: 8vh;
     min-height: 60px;
     width: 100vw;
-    background-color: black;
+    background-color: seashell;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -585,7 +586,7 @@ body {
     .logo {
         height:inherit;
         width: 10vw;
-        color: seashell;
+        color: black;
     }
 
     .logoText {
@@ -632,7 +633,7 @@ body {
             font-size: 1.5vw;
             height: 13%;
             width: 30%;
-            color: seashell;
+            color: black;
             padding-right: 15%;
             z-index: 5;
         }
@@ -680,7 +681,7 @@ body {
         border-right: solid;
         border-color:black;
         flex-direction: column;
-        z-index: 3;
+        z-index: 4;
         overflow-y: hidden ;
         overflow-x: hidden;
         margin-top: 8vh;
@@ -1032,7 +1033,7 @@ a {
     height: 6vh;
     width: 11vw;
     position: absolute;
-    right: 80.5%;
+    right: 78%;
     top: 74%;
     text-align: center;
     padding-top: 1.5%;
