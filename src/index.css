@@ -82,14 +82,14 @@ body {
 
     .homeP {
         color: rgba(255, 245, 238, 0.85);
-        font-size: 1.2vmax;
+        font-size: 1.4vmax;
         height: 7vh;
 
     }
 
     .homeTitle {
         color: seashell;
-        font-size: 2.7vmax;
+        font-size: 3vmax;
         height: 3vh;
     }
 
@@ -105,9 +105,8 @@ body {
 
 
     .shopLink{
-        width: 9vw;
+        width: 8vw;
         height: auto;
-        max-height: 60px;
         color: white;
         text-decoration: none;
         text-align: center;
@@ -117,6 +116,7 @@ body {
         transition: .5s ease-out;
         box-sizing: border-box;
         margin: 0;
+        padding: 5%;
         
     }
 
@@ -125,29 +125,73 @@ body {
 
         cursor: pointer;
         background-position:left;
-        color: rgb(46, 80, 78);
-        margin: 0;  
-        padding: 0;      
-
+        color: rgb(46, 80, 78); 
+ 
     }
 
     .shopLinkText {
-        font-size: 1vmax;
-        height: inherit;
-        width: inherit;
+        font-size: 1.3vmax;
+        margin: 0;
+        padding: 0;
+
+    }
 
 
+
+    @media only screen and (min-width: 1001px) and (max-width: 1200px) {
+        .shopLinkText {
+            font-size: 2vmax;
+        }
+
+        .homeP {
+            font-size: 2vmax;
+        }
+
+        .homeTitle {
+            font-size: 4.2vmax;
+        }
+
+        .shopLink {
+            width: 12vw;
+        }
+    }
+
+    @media only screen and (max-width: 1000px) 
+    {
+
+        .shopLinkText {
+            font-size: 1.8vmax;
+        }
+
+        .homeP {
+            font-size: 2vmax;
+        }
+
+        .homeTitle {
+            font-size: 4.2vmax;
+        }
+
+        .shopLink {
+            width: 16vw;
+            min-width: 100px;
+        }
+        .home {
+            flex-direction: column;
+        }
+
+        .homeText {
+            width: 100vw;
+            height: 50vh;
+            margin-top: 7%;
+        }
+
+        .homeImage {
+            width: 100vw;
+            height: 50vh;
+        }
 
     }
         
-
-
-
-       .shopLink:hover {
-        border-width: 3px;
-        
-    }
-    
 .shop {
     height: 92vh;
     margin-top: 8vh;
@@ -625,6 +669,7 @@ body {
             height: 65%;
             object-fit: contain;
             z-index: 5;
+            margin-top: 5%;
 
         }
 
