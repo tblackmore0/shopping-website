@@ -21,7 +21,6 @@ return (
         <div id='cartDiv' className='cartDiv' >
             <img id='shoppingCartImg' className='shoppingCart' src='siteImages/shopping-bag.png' alt='shopping basket' />
             <span id='cartNumber' className='cartNumber'>{AddCart(shoppingCart)}</span>
-            
         </div>
 
         

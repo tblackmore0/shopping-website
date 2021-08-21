@@ -10,6 +10,7 @@ let updateCart= props.updateCart
     
     if (props.item) {
         return (
+            <div className ='itemBorderDiv'>
             <div className='cartPreviewItem'>
                 <div className='itemFirstSection'>
                     <div className='cartPreviewNameDiv'>
@@ -37,6 +38,7 @@ let updateCart= props.updateCart
                     X
                 </div>
                 </div>
+            </div>
             </div>
 
     )}

@@ -116,7 +116,19 @@ const itemsList =  [
 
 function Shop (props) {
 
-    console.log(window.location.pathname)
+    setTimeout(function() {
+        
+    let navBar = document.getElementById('navBar');
+    let logo = document.getElementById('logo');
+    let shoppingC = document.getElementById('shoppingCartImg')
+    let cartN = document.getElementById('cartNumber')
+
+    shoppingC.src = ('siteImages/shopping-bag-white.png');
+    cartN.style.color = ('seashell');
+    logo.style.color = ('seashell');
+    navBar.style.background = ('linear-gradient(90deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%)');
+
+    }, 100);
 
     return (
         <div className='shop'>

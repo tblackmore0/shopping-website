@@ -3,6 +3,21 @@ import { checkoutBackgroundHandler } from './Checkout';
 
 function Home () {
 
+    setTimeout(function() {
+        
+        let navBar = document.getElementById('navBar');
+        let logo = document.getElementById('logo');
+        let shoppingC = document.getElementById('shoppingCartImg')
+        let cartN = document.getElementById('cartNumber')
+
+        shoppingC.src = ('siteImages/shopping-bag.png');
+        cartN.style.color = ('black');
+        logo.style.color = ('black');
+        navBar.style.background = ('seashell');
+    
+        }, 100);
+    
+
     return (
         <div id='home' className='home'>
             <div className ='homeText'>
