@@ -55,7 +55,7 @@ function navBarHandler (e) {
     return 
 }
 
-    if (e.target == preview || e.target == img|| e.target == number || e.target == logo) {
+    if ( /*e.target == preview || */ e.target == img|| e.target == number || e.target == logo) {
 
         if (checkout || home) {
             toggleCartCheckout();

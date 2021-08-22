@@ -23,22 +23,16 @@ let updateCart= props.updateCart
                     </div>
                 </div>
                 <div className ='quantityButtons'>
-                    <div onClick={(e) => increaseQuantity(item, shoppingCart, updateCart)} className ='quantityButton'>
-                        <span className='quantityTextPlus'>+</span>
-                    </div>
-                    <div onClick={(e) => decreaseQuantity(item, shoppingCart, updateCart)} className ='quantityButton'>
-                        <span className='quantityTextMinus'>-</span>
-                    </div>
+                    <img src='siteImages/PlusSign.png' alt='Increase quantity button' onClick={(e) => increaseQuantity(item, shoppingCart, updateCart)} className ='quantityButton plus'/>
+                    <img src='siteImages/MinusSign.png' alt='Decrease quantity button' onClick={(e) => decreaseQuantity(item, shoppingCart, updateCart)} className ='quantityButton minus'/>
                 </div>
                 <div className = 'endSection'>
                 <div className='cartPreviewPrice'>
                     £{props.item.price*props.item.quantity} 
                 </div>
-                <div className='removeCartItem' onClick={(e) => DeleteItem(item, shoppingCart, updateCart)}>
-                    X
-                </div>
                 </div>
             </div>
+            <img onClick={(e) => DeleteItem(item, shoppingCart, updateCart)} alt='Icon for removing cart item' src='siteImages/white-x.png' className='removeItem' />
             </div>
 
     )}

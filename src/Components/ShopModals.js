@@ -81,7 +81,13 @@ function backgroundHandler (e) {
     if (e.target == modalBackground || e.target == logo || (e.target == navBar && e.target != cart))  {
     hideModal(e);
     HideCartPreview(e);
-}}
+}
+
+    if (e.target == cart) {
+        hideModal(e);
+    }
+
+}
 
     export default ShopModals
     export {hideModal, backgroundHandler}

@@ -205,6 +205,8 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
     position: absolute;
     overflow-y: scroll;
     overflow-x: hidden;
+    background-image: url("./Images/shopBack.png");
+    background-size: cover;
 }
 
 
@@ -720,6 +722,8 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
         
     }
 
+
+
     .cartPreviewDiv:hover {
         cursor: default;
     }
@@ -740,7 +744,7 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
 
         .cartPreviewItem {
             height: inherit;
-            width: inherit;
+            width: 100%;
             display: flex;
             flex-direction: row;
             gap: 0%;
@@ -748,16 +752,29 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
             align-content: center;
             justify-content: center;
             background: seashell;
+            margin: 0;
 
 
+        }
+
+        .removeItem {
+            width: 3vw;
+            height: auto;
+            object-fit: cover;
+            display: flex;
+            cursor: pointer;
         }
 
         .itemBorderDiv {
             height: 10.5vh;
             width: 80.5%;
-            background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
+            background: linear-gradient(90deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
             padding: 1%;
             margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:  center;
         }
 
         @media only screen and (min-width: 501px) and (max-width: 1200px) {
@@ -774,31 +791,13 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
                 left: 50.3%;
             }
 
-            .removeCartItem:hover {
-                background-color: seashell;
-                color: black;
-            }
-
-            .removeCartItem:focus {
-                background-color: black;
-                color: seashell;
-            }
         }
 
-            .removeCartItem {
-                height: 2.5vh;
-                color: black;
-                width: 2vw;
-                text-align: center;
-                border: solid;
-                border-color: black;
-                border-width: 1px;
-                cursor: pointer;
-            }
-
             .cartPreviewPrice {
+                height: fit-content;
                 width: 100%;
-                font-size: 3vmin;
+                font-size: 1.2vmax;
+                text-align: center;
             }
             
 
@@ -809,47 +808,43 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
 
 
             .quantityButtons {
-                height: inherit;
-                width: 15%;
+                height: 100%;
+                width: 25%;
                 display: flex;
                 flex-direction: column;
-                gap: 10%;
                 align-items: center;
                 justify-content: center;
+                gap: 40%;
+                color: black;
             }
 
                 .quantityButton {
-                    height: 22%;
-                    width: 25%;
                     cursor: pointer;
                     object-fit: cover;
-                    border: solid;
-                    border-color: black;
-                    text-align: center;
-                    border-width: 1px;
-                    display: flex;
+                    background-color: seashell;
+
+                }
+
+                .plus {
+
+                    height: 23%;
+                    width: auto;
+
+                }
+
+                .minus {
+                    height: auto;
+                    width: 25%;
 
                 }
 
                 .quantityButton:hover {
-                    background-color: black;
-                    color: seashell;
-                }
-
-                
-                .quantityTextPlus{
-                    padding-left: 10%;
-
-                }
-
-                .quantityTextMinus{
-                    padding-left: 30%;
-
+                    cursor: pointer;
                 }
             
             .itemFirstSection {
                 height: 60%;
-                width: 35%;
+                width: 40%;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -871,13 +866,6 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
 
             }
 
-            .cartPreviewPrice {
-                height: 2vh;
-                width: 5vw;
-                text-align: center;
-                font-size: 1.2vmax;
-
-            }
 
             .cartPreviewQuantity {
                 height: 50%;
@@ -890,7 +878,7 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
             border-radius: 0;
             margin: 0;
             padding: 0;
-            background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
+            background: linear-gradient(90deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
             color: seashell;
             cursor: pointer;
             text-align: center;
@@ -911,12 +899,22 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
         .cartTotal {
             height: 1.5vmax;
             width: 100%;
-            border-top: solid;
-            border-color: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
             text-align: center;
             z-index: 2;
             background-color: seashell;
             font-size: 1.2vmax;
+        }
+
+        .totalWrapper {
+                height: 1.5vmax;
+                width: 100%;
+                background: linear-gradient(90deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
+                padding-top: 1%;
+                margin: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items:  center;
         }
 
         .previewLinks {
@@ -938,16 +936,6 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
 
 
         @media only screen and (min-width: 501px) and (max-width: 1200px) {
-
-            .quantityTextPlus{
-                padding-right: 50%;
-
-            }
-
-            .quantityTextMinus{
-                padding-left: 25%;
-
-            }
 
             .previewLinks {
                 width: 100%;
@@ -1052,20 +1040,18 @@ a {
         justify-content: center;
         overflow: hidden;
         box-sizing: border-box;
-        border-bottom: solid;
-        border-color: black;
 }
 
 
 .checkoutInfo {
     justify-content: center;
     align-items: center;
-    width: 30vw;
-    height: 20vh;
+    width: inherit;
+    height: inherit;
     display: flex;
     flex-direction: column;
-    border: solid;
-    border-color: black;
+    background-color: seashell;
+    font-size: 1.2vmax;
     }
 
 
@@ -1104,6 +1090,15 @@ a {
     100% {
         transform:translateX(10px);
     }
+}
+
+
+.infoWrapper {
+        width: 28vw;
+        height: 16vh;
+        background: linear-gradient(90deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
+        padding: 0.3%;
+        margin: 0;
 }
 
 @media only screen and (min-width: 501px) and (max-width: 1200px) {
