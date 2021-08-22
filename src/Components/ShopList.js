@@ -1,24 +1,26 @@
 import {itemsList} from './Shop'
+import {ItemCard} from './ItemCard'
 
 function ShopList (props) {
 
+    let items = props.items;
 
     return (
 
         <div className = 'shopWindow'>
         
-            <ul className = 'shopGrid'>
-              {props.items.map((item) => (
+            <div className = 'shopGrid'>
+                <ItemCard item={items[0]}/>
+                <ItemCard item={items[1]}/>
+                <ItemCard item={items[2]}/>
+                <ItemCard item={items[3]}/>
+                <ItemCard item={items[4]}/>
+                <ItemCard item={items[5]}/>
+                <ItemCard item={items[6]}/>
+                <ItemCard item={items[7]}/>
+                <ItemCard item={items[8]}/>
 
-              <li >
-                  <div className = 'itemCard' onClick={ShowItemModal} data-key={item.objectID} key={item.objectID}>
-                    <img className = 'itemImage' src={item.imageURL} alt={item.alt} data-key={item.objectID}></img>
-                    <span className='itemTitle' data-key={item.objectID}>{item.name}</span>
-                  </div>
-              </li>
-
-              ))}
-            </ul>
+            </div>
         </div>
 
     )};
@@ -43,4 +45,4 @@ function ShopList (props) {
             } 
         })}
 
-export default ShopList;
+export {ShopList, ShowItemModal};

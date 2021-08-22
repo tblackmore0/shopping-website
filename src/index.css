@@ -197,6 +197,7 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
 .shop {
     height: 92vh;
     margin-top: 8vh;
+    margin-bottom: 8vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -234,13 +235,9 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
 
 
     .itemCard {
-        background-color: seashell;
+        width: 17vw;
+        height: 37vh;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-color: black;
-        border: solid;
-        margin-bottom: 5%;
         box-sizing: border-box;
         position: relative;
     }
@@ -251,11 +248,9 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
     }
 
         .itemImage {
-            width: 17vw;
-            height: 37vh;
+            width: inherit;
+            height: inherit;
             object-fit: cover;
-            border-bottom: black;
-            border-bottom: solid;
         }
 
         .itemTitle {
@@ -814,7 +809,7 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                gap: 40%;
+                gap: 10%;
                 color: black;
             }
 
@@ -827,14 +822,14 @@ background: linear-gradient(0deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
 
                 .plus {
 
-                    height: 23%;
-                    width: auto;
+                    height: 20%;
+                    width: 30%;
 
                 }
 
                 .minus {
-                    height: auto;
-                    width: 25%;
+                    height: 30%;
+                    width: 20%;
 
                 }
 

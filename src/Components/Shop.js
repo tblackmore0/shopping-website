@@ -1,4 +1,4 @@
-import ShopList from './ShopList'
+import {ShopList} from './ShopList'
 import ShopModals from './ShopModals'
 
 
