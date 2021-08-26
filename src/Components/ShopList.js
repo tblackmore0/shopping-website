@@ -1,5 +1,6 @@
-import {itemsList} from './Shop'
-import {ItemCard} from './ItemCard'
+import {itemsList} from './Shop';
+import {ItemCard} from './ItemCard';
+import {ShopText} from './ShopText';
 
 function ShopList (props) {
 
@@ -10,15 +11,25 @@ function ShopList (props) {
         <div className = 'shopWindow'>
         
             <div className = 'shopGrid'>
+                <div className='gridRow'>
+                <ShopText class={'shopText shopText1'} title={'Sustainability'} text={'All of our wood is sourced from sustainable forests, allowing us to remain carbon neutral.'}/>
                 <ItemCard item={items[0]}/>
                 <ItemCard item={items[1]}/>
+                </div>
+                <div className='gridRow'>
                 <ItemCard item={items[2]}/>
                 <ItemCard item={items[3]}/>
+                <ShopText class={'shopText shopText2'} title={'Uncompromising Quality'} text={'We never settle for less than perfect. If anything is wrong with your order, get in touch and we will fix it free of charge.'}/>
                 <ItemCard item={items[4]}/>
-                <ItemCard item={items[5]}/>
-                <ItemCard item={items[6]}/>
+                </div>
+                <div className='gridRow gridRow3'>
                 <ItemCard item={items[7]}/>
                 <ItemCard item={items[8]}/>
+                </div> <div className='gridRow'>
+                <ItemCard item={items[6]}/>
+                <ShopText class={'shopText shopText3'} title={'Shipping & Delivery'} text={'We are a small company with a global scope. Shipping and returns are quick, easy, and affordable.'}/>
+                <ItemCard item={items[5]}/>
+                </div>
 
             </div>
         </div>

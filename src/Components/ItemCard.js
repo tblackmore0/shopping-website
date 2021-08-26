@@ -6,8 +6,8 @@ function ItemCard (props) {
 
   return (
 
-    <div className = 'itemCard' onClick={ShowItemModal} data-key={item.objectID} key={item.objectID}>
-      <img className = 'itemImage' src={item.imageURL} alt={item.alt} data-key={item.objectID}></img>
+    <div className = {item.class} onClick={ShowItemModal} data-key={item.objectID} key={item.objectID}>
+      <img className = 'itemImage' src={item.thumb} alt={item.alt} data-key={item.objectID}></img>
     </div>
 
   )};

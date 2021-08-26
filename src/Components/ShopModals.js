@@ -15,7 +15,8 @@ let updateCart = props.updateCart;
             <ul id='modalList' data-status={'off'}>
               {props.items.map((item) => (
 
-              <li className ={modalPosition(item)} data-key={item.objectID}>
+              <li className='itemModal' data-key={item.objectID}>
+                <div className = 'modalWrapper'>
                 <img className = 'modalImage' src={item.imageURL} alt={item.name}></img>
                 <div className = 'modalDiv'>
                     <span className='modalTitle'>{item.name}</span>
@@ -25,10 +26,15 @@ let updateCart = props.updateCart;
                     </div>
                     <div className='addToCart'>
                         <form className='cartForm' onSubmit={(e) => PushToCart(e, shoppingCart, updateCart)} data-key={item.objectID}>
+                            <div className='inputWrapper'>
                             <input className = 'input' type='number' step='1' placeholder='1' />
+                            </div>
+                            <div className='addButtonWrapper'>
                             <button className='addToCartButton'>Add to cart</button>
+                            </div>
                         </form>
                     </div> 
+                </div>
                 </div>
               </li>
 
@@ -40,20 +46,6 @@ let updateCart = props.updateCart;
             
 
     )};
-
-function modalPosition (item) {
-    if (item.objectID <3 ) {
-        return 'itemModal itemModalTop'
-    }
-
-    if (item.objectID <6) {
-        return 'itemModal itemModalMid'
-    }
-
-    if (item.objectID <9) {
-        return 'itemModal itemModalBottom'
-    }
-}
 
 
 function hideModal (e) {
