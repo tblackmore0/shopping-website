@@ -22,21 +22,15 @@ function Checkout () {
     return (
     
         <div id='checkoutPage' className='checkoutPage'>
-            <div className='checkoutImg' />
+            <div className='checkoutImg'>
             <Link to="/shop">
             <img id='returnArrow' className='returnArrow  returnArrowHover' src='siteImages/Arrow.png' alt='return to shop'/>
             </Link>
-            <Link to="/shop">
-            <div className ='returnToShop' /* onMouseEnter={addHover} onMouseOut={removeHover} */>
-                Return to Shop
-            </div>
-            </Link>
-            <div className='infoWrapper'>
             <div className ='checkoutInfo'>
-                Coming Soon!
+                <p className='checkoutP'>Coming Soon!</p>
             </div>
             </div>
-            <div id ='modalBackground' onClick={checkoutBackgroundHandler}>
+            <div id ='modalBackground' style={{height: "100vh"}} onClick={checkoutBackgroundHandler}>
             </div>
         </div>
         
