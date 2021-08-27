@@ -23,12 +23,33 @@
       height: 60%;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
 
     .window {
         width: 100vw;
         height: 100vh;
         overflow: hidden;
+      }
+
+      ::-webkit-scrollbar {
+        width: 3vmax;
+        
+    }
+    ::-webkit-scrollbar-track {
+        background: #bdbdbd00;
+      }
+    
+      ::-webkit-scrollbar-thumb {
+        background: rgba(136, 136, 136, 0.523);
+        
+      }
+    
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(42, 42, 42);
+      }
+    
+      ::-webkit-scrollbar-button {
+          height: 60%;
       }
     
   }
@@ -102,6 +123,7 @@ body {
         object-fit: cover;
         margin-top: 8vh;
         border-left: solid 2px seashell;
+
     }
 
 
@@ -173,7 +195,7 @@ body {
         }
 
         .homeTitle {
-            font-size: 4.2vmax;
+            font-size: 4vmax;
         }
         
         .home {
@@ -235,6 +257,14 @@ body {
         margin-top: 5vh;
         height: inherit;
         width: 100%;
+    }
+
+    .shopIcons {
+        display: none;
+    }
+
+    .tableIcon {
+        display: none;
     }
 
     .shopGrid {
@@ -416,8 +446,32 @@ body {
         }
         }
 
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 600px) {
+            .shopIcons {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                background: seashell;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10%;
+            }
 
+            .itemIcon {
+                display: flex;
+                width: 30%;
+                height: 20%;
+                object-fit: contain;
+            }
+
+            .itemIcon:hover {
+                cursor: pointer;
+            }   
+
+            .shopGrid {
+                display: none;
+            }
 
         }
 
@@ -668,7 +722,7 @@ body {
         }
 
 
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 600px) {
 
             img {
                 border-radius: 0.5px;
@@ -774,11 +828,12 @@ body {
         }
     }
 
-    @media only screen and (min-width: 600px) and (max-width: 800px) {
+    @media only screen and (min-width: 601px) and (max-width: 800px) {
         .logoText {
             font-size: 4.2vw;
         }
     }
+
 
 
 
@@ -837,7 +892,7 @@ body {
             }
     
             .logoText {
-                font-size: 6vw;
+                font-size: 8.5vw;
             }
     
             .cartDiv {
@@ -931,10 +986,11 @@ body {
 
         }
 
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 600px) {
             .cartPreviewDiv {
+                height: 92%;
                 width: 50vw;
-                left: 50.3%;
+                left: 50%;
             }
 
         }
@@ -1239,7 +1295,11 @@ a {
     .returnArrow {
         left: 1%;
         top: 72vh;
-        width: 6vw;
-        padding: 6%;
+        width: 10vw;
+        padding: 4%;
+    }
+
+    .checkoutP {
+        font-size: 12vw;
     }
 }

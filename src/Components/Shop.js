@@ -152,6 +152,7 @@ function Shop (props) {
         <div className='shop'>
                 <ShopList items={itemsList} shoppingCart={props.shoppingCart} updateCart={props.updateCart}/>
                 <ShopModals items={itemsList} shoppingCart={props.shoppingCart} updateCart={props.updateCart}/>
+
             </div>
     )};
 

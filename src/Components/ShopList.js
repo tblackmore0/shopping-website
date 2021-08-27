@@ -9,6 +9,12 @@ function ShopList (props) {
     return (
 
         <div className = 'shopWindow'>
+
+                <div className='shopIcons'>
+                    <img className='itemIcon' alt='Chair icon' src='siteImages/ChairIcon.png' />
+                    <img className='itemIcon' alt='Table icon' src='siteImages/TableIcon.png' />
+                    <img className='itemIcon' alt='Shelves icon' src='siteImages/ShelvesIcon.png' />
+                </div>
         
             <div className = 'shopGrid'>
                 <div className='gridRow'>
