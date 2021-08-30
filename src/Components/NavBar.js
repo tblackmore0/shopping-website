@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { backgroundHandler } from './ShopModals';
 import { toggleCartCheckout } from './Checkout';
 import { checkoutBackgroundHandler } from './Checkout';
+import MediaQuery from 'react-responsive'
 
 function NavBar (props) {
 
@@ -18,6 +19,9 @@ return (
                     <p id='logoText' className = 'logoText'> Jaeger. </p>
                 </Link>
             </div>
+            <MediaQuery maxWidth={600}>
+            <img onClick={returnArrowShop} alt='Return arrow' src='siteImages/ReturnArrow.png' id='returnArrowShop' className='returnArrowShop' />
+            </MediaQuery>        
         <div id='cartDiv' className='cartDiv' >
             <img id='shoppingCartImg' className='shoppingCart' src='siteImages/shopping-bag.png' alt='shopping basket' />
             <span id='cartNumber' className='cartNumber'>{AddCart(shoppingCart)}</span>
@@ -35,6 +39,20 @@ return (
 function AddCart (shoppingCart) {
    let sum = shoppingCart.reduce((accumulator, item) => accumulator + item.quantity, 0 )
    return sum
+}
+
+function returnArrowShop () {
+
+    document.getElementById('shopIcons').style.display='flex';
+
+    document.getElementById('returnArrowShop').style.display='none';
+
+    let grids = document.getElementsByClassName('mobileGrid');
+
+    Array.from(grids).forEach(element => {
+        element.style.display='none'
+    });
+    
 }
 
 function navBarHandler (e) {
@@ -70,5 +88,8 @@ function navBarHandler (e) {
         backgroundHandler(e)
         }
 }}
+
+
+
 
 export {NavBar, AddCart}

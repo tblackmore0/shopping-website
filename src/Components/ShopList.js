@@ -1,6 +1,11 @@
 import {itemsList} from './Shop';
 import {ItemCard} from './ItemCard';
 import {ShopText} from './ShopText';
+import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
+
+
+
 
 function ShopList (props) {
 
@@ -9,13 +14,9 @@ function ShopList (props) {
     return (
 
         <div className = 'shopWindow'>
-
-                <div className='shopIcons'>
-                    <img className='itemIcon' alt='Chair icon' src='siteImages/ChairIcon.png' />
-                    <img className='itemIcon' alt='Table icon' src='siteImages/TableIcon.png' />
-                    <img className='itemIcon' alt='Shelves icon' src='siteImages/ShelvesIcon.png' />
-                </div>
         
+
+
             <div className = 'shopGrid'>
                 <div className='gridRow'>
                 <ShopText class={'shopText shopText1'} title={'Sustainability'} text={'All of our wood is sourced from sustainable forests, allowing us to remain carbon neutral.'}/>
@@ -36,9 +37,11 @@ function ShopList (props) {
                 <ShopText class={'shopText shopText3'} title={'Shipping & Delivery'} text={'We are a small company with a global scope. Shipping and returns are quick, easy, and affordable.'}/>
                 <ItemCard item={items[5]}/>
                 </div>
-
             </div>
+
         </div>
+
+
 
     )};
 
@@ -62,4 +65,6 @@ function ShopList (props) {
             } 
         })}
 
-export {ShopList, ShowItemModal};
+
+
+export {ShopList, ShowItemModal}

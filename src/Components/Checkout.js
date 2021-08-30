@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 
 function Checkout () {
 
-    checkoutTransition();
 
     setTimeout(function() {
         
@@ -11,6 +10,9 @@ function Checkout () {
         let logo = document.getElementById('logo');
         let shoppingC = document.getElementById('shoppingCartImg')
         let cartN = document.getElementById('cartNumber')
+
+        let arrow = document.getElementById('returnArrowShop')
+        if (arrow) { arrow.style.display='none'};
     
         shoppingC.src = ('siteImages/shopping-bag-white.png');
         cartN.style.color = ('seashell');
@@ -79,6 +81,7 @@ function toggleCartCheckout () {
 
 function checkoutBackgroundHandler (e) {
 
+
             
     const cartPreview = document.getElementById('cartPreview')
     const modalBackground = document.getElementById('modalBackground')
@@ -99,6 +102,11 @@ function checkoutBackgroundHandler (e) {
 }}
 
 function checkoutTransition () {
+
+
+    console.log('got you')
+
+
     const cartPreview = document.getElementById('cartPreview')
 
     if (cartPreview) {
@@ -106,4 +114,4 @@ function checkoutTransition () {
     }
 }
 
-export {Checkout, toggleCartCheckout, checkoutBackgroundHandler}
+export {Checkout, checkoutTransition, toggleCartCheckout, checkoutBackgroundHandler}

@@ -1,5 +1,9 @@
 import {ShopList} from './ShopList'
 import ShopModals from './ShopModals'
+import MediaQuery from 'react-responsive'
+import { ChairGrid } from './ChairGrid';
+import { TableGrid } from './TableGrid';
+import { ShelvesGrid } from './ShelvesGrid';
 
 
 const itemsList =  [
@@ -140,6 +144,10 @@ function Shop (props) {
     let logo = document.getElementById('logo');
     let shoppingC = document.getElementById('shoppingCartImg')
     let cartN = document.getElementById('cartNumber')
+    let cGrid = document.getElementById('ChairGrid');
+    let tGrid = document.getElementById('TableGrid');
+    let sGrid = document.getElementById('ShelvesGrid');
+
 
     shoppingC.src = ('siteImages/shopping-bag-white.png');
     cartN.style.color = ('seashell');
@@ -148,13 +156,54 @@ function Shop (props) {
 
     }, 100);
 
+
+
     return (
         <div className='shop'>
+
+            <MediaQuery maxWidth={600}>
+            <div className='shopIcons' id='shopIcons'>
+                <img onClick={showChairs} id='chairIcon' className='itemIcon' alt='Chair icon' src='siteImages/ChairIcon.png' />
+                <img onClick={showTables} id='tableIcon' className='itemIcon' alt='Table icon' src='siteImages/TableIcon.png' />
+                <img onClick={showShelves} id='shelvesIcon' className='itemIcon' alt='Shelves icon' src='siteImages/ShelvesIcon.png' />
+            </div>
+                <ChairGrid items={itemsList}/>
+                <TableGrid items={itemsList}/>
+                <ShelvesGrid items={itemsList}/>
+           
+                </MediaQuery>
+
+
+            <MediaQuery minWidth={601}>
                 <ShopList items={itemsList} shoppingCart={props.shoppingCart} updateCart={props.updateCart}/>
+                
+
+
+                </MediaQuery>
+
+
                 <ShopModals items={itemsList} shoppingCart={props.shoppingCart} updateCart={props.updateCart}/>
 
             </div>
     )};
+
+function showChairs () {
+    document.getElementById('ChairGrid').style.display='grid';
+    document.getElementById('shopIcons').style.display='none';
+    document.getElementById('returnArrowShop').style.display='flex';
+}
+
+function showTables () {
+    document.getElementById('TableGrid').style.display='grid';
+    document.getElementById('shopIcons').style.display='none';
+    document.getElementById('returnArrowShop').style.display='flex';
+}
+
+function showShelves () {
+    document.getElementById('ShelvesGrid').style.display='grid';
+    document.getElementById('shopIcons').style.display='none';
+    document.getElementById('returnArrowShop').style.display='flex';
+}
 
 export default Shop;
 export {itemsList}

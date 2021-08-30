@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { itemsList } from "./Shop";
 import { hideModal } from "./ShopModals";
 import {Link} from 'react-router-dom';
+import {checkoutTransition} from './Checkout';
 
 function DeleteItem (item, shoppingCart, updateCart) {
 
@@ -50,7 +51,7 @@ function CartPreview (props) {
             </div>
             </div>
                 <Link to="/checkout" updateCart={props.updateCart} shoppingCart={shoppingCart} >
-                    <div className='checkoutLink'>View Basket</div>
+                    <div onClick={checkoutTransition} className='checkoutLink'>View Basket</div>
                 </Link>
             </div>
         </div>

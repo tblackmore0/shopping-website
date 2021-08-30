@@ -2,8 +2,18 @@
     font-family: 'Urbanist', sans-serif;
 }
 
+img {
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */  
+}
+
 ::-webkit-scrollbar {
     width: 1vmax;
+    position: relative;
+    z-index: 4;
     
 }
 ::-webkit-scrollbar-track {
@@ -36,7 +46,7 @@
         
     }
     ::-webkit-scrollbar-track {
-        background: #bdbdbd00;
+        background: transparent;
       }
     
       ::-webkit-scrollbar-thumb {
@@ -214,10 +224,10 @@ body {
         .homeText {
             background: linear-gradient(90deg, rgba(25,48,84,1) 0%, rgba(13,195,147,1) 100%);
             width: 100%;
-            height: 30%;
+            height: 42%;
             position: absolute;
             z-index: 2;
-            top: 20%;
+            top: 30%;
             border-top: solid 2px seashell;
             border-bottom: solid 2px seashell;
         }
@@ -229,6 +239,11 @@ body {
     }
 
     @media only screen and (max-width: 600px) {
+
+        .window {
+            overflow-y: hidden;
+        }
+
         .home {
 
         background-image: url("./Images/HomeBack1.jpg");
@@ -257,6 +272,10 @@ body {
         margin-top: 5vh;
         height: inherit;
         width: 100%;
+    }
+
+    .mobileGrid {
+        display: none;
     }
 
     .shopIcons {
@@ -425,9 +444,6 @@ body {
             
         }
 
-        .itemImage:hover {
-            margin-bottom: 2vh;
-        }
 
         .itemTitle {
             font-size: 2.5vh;
@@ -447,10 +463,21 @@ body {
         }
 
         @media only screen and (max-width: 600px) {
+
+            ::-webkit-scrollbar {
+                display: none;
+                
+            }
+
+            .itemCard {
+                height: inherit;
+                width: inherit;
+            }
+
             .shopIcons {
                 display: flex;
                 width: 100vw;
-                height: 100vh;
+                height: 92%;
                 background: seashell;
                 flex-direction: column;
                 justify-content: center;
@@ -458,20 +485,76 @@ body {
                 gap: 10%;
             }
 
+
+            .mobileGrid {
+                height: 100%;
+                width: inherit;
+                display: none;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-content: center;
+                background: seashell;
+                gap: 0;
+
+            }
+
+            .position1 {
+                width: 100vw;
+                align-self: stretch;
+                height: 30.6vh;
+            }
+
+            .position2 {
+                width: 100vw;
+                align-self: stretch;
+                height: 30.6vh;
+            }
+            .position3 {
+                width: 100vw;
+                align-self: stretch;
+                height: 30.6vh;
+            }
+            .position4 {
+                width: 100vw;
+                height: 30.6vh;
+                align-self: stretch;
+            }
+            .position5 {
+                width: 100vw;
+                height: 30.6vh;
+                align-self: stretch;
+            }
+            .position6 {
+                width: 100vw;
+                height: 30.6vh;
+                align-self: stretch;
+            }
+            .position7 {
+                width: 100vw;
+                height: 30.6vh;
+                align-self: stretch;
+            }
+            .position8 {
+                width: 100vw;
+                height: 30.6vh;
+                align-self: stretch;
+            }
+            .position9 {
+                width: 100vw;
+                height: 30.6vh;
+                align-self: stretch;
+            }
+
             .itemIcon {
                 display: flex;
-                width: 30%;
-                height: 20%;
+                width: 30vw;
+                height: 20vh;
                 object-fit: contain;
             }
 
             .itemIcon:hover {
                 cursor: pointer;
             }   
-
-            .shopGrid {
-                display: none;
-            }
 
         }
 
@@ -527,7 +610,7 @@ body {
 
 
         .modalImage {
-            width: 45%;
+            width: 50%;
             height: 100%;
             object-fit: cover;
             border-bottom: black;
@@ -657,134 +740,110 @@ body {
         }
 
 
-        @media only screen and (min-width: 501px) and (max-width: 800px) {
-            .modalText {
-                font-size: 2vh;
-            }
-    /*        .itemModal{
-                flex-direction: column;
-                width: 70vw;
-                right: 25%;
-                left: 15%;
-            }
+        @media only screen and (max-width: 800px) {
 
-            .itemModal{
-                flex-direction: column;
-                width: 70vw;
-                right: 25%;
-                left: 15%;
-            }
-            .modalImage {
-                border-radius: 0.5px;
-                width: 100%;
-                height: 50vmax;
-            }
-
-            .modalDiv {
-                width: 100%;
-                height: 50vmax;
-            }
-
-            .modalTextDiv {
-                width: 90%;
-                height: 60%;
-                margin: 0;
-            }
-
-
-
-            .modalTitle {
-                font-size: 3vmax;
-                margin:0;
-                height: 17%;
-                margin-top: 2%;
-            }
-
-            .cartForm {
-                flex-direction: row;
-                margin: 0;
-                height: 3vmax;
-            }
-            .addToCart {
-                height: auto;
-            }
-
-            .addToCartButton {
-                width: 14vw;
-                height: 3.3vmax;
-                font-size: 1.6vw;
-            }
-
-            .input {
-                height: 2.4vh;
-                font-size: 1.6vw;
-            } */
-        }
-
-
-        @media only screen and (max-width: 600px) {
-
-            img {
-                border-radius: 0.5px;
+            .returnArrowShop {
+                height: inherit;
+                width: 9vw;
+                object-fit: contain;
+                margin-right: 15%;
+                display: flex;
             }
 
             #modalBackground {
-                height: 270vh;
+                height: 92vh;
+            }
+           
+
+            .modalText {
+                font-size: 1.7vh;
+                margin-top: 0;
             }
 
-            .itemModal{
-                flex-direction: column;
+            .itemModal {
                 width: 70vw;
-                right: 25%;
-                left: 15%;
+                right: 0%;
+                left: 13%;
+                box-sizing: border-box;
+            }
+
+            .modalWrapper{
+                flex-direction: column;
+                width: inherit;
+                height: inherit;
+                padding: 2%;
+                right: 0%;
+                left: 13%;
+                box-sizing: border-box;
             }
 
             .modalImage {
                 border-radius: 0.5px;
                 width: 100%;
                 height: 50%;
+                box-sizing: border-box;
+                border-width: 3px;
             }
 
             .modalDiv {
                 width: 100%;
-                height: 50%;
+                height: 48%;
+                box-sizing: border-box;
+                border-width: 3px;
+                
             }
+
 
             .modalTextDiv {
                 width: 90%;
-                height: 75vh;
+                height: 80%;
+                margin: 0;
             }
 
-            .modalText {
-                font-size: 1.9vmax;
+            #modalList {
                 margin: 0;
-                height: 60%;
+                padding: 0;
             }
+
 
             .modalTitle {
-                font-size: 4vmax;
+                font-size: 2.8vmax;
+                margin:0;
+                height: 10%;
                 margin-top: 2%;
-                height: 12%;
+                margin-bottom: 4%;
             }
 
             .cartForm {
                 flex-direction: row;
                 margin: 0;
-                height: 10%;
             }
             .addToCart {
-                height: auto;
+                height: 15%;
+                width: 100%;
+                margin-bottom: 2%;
+            }
+
+            .addButtonWrapper {
+                width: 14vw;
+                height: 60%;
+                font-size: 2vw;
+                padding: 1%;
             }
 
             .addToCartButton {
-                width: 14vw;
-                height: 3.3vmax;
-                font-size: 1.8vw;
+                font-size: 2.5vw;
             }
 
+            .inputWrapper {
+                height: 60%;
+                font-size: 2vw;
+                width: 8vw;
+                padding: 1%;
+            } 
+
             .input {
-                height: 2.4vh;
-                font-size: 1.6vmax;
+                font-size: 2.5vw;
             }
         }
    
@@ -892,7 +951,7 @@ body {
             }
     
             .logoText {
-                font-size: 8.5vw;
+                font-size: 8vw;
             }
     
             .cartDiv {
@@ -1024,6 +1083,7 @@ body {
                     cursor: pointer;
                     background-color: seashell;
 
+
                 }
 
                 .plus {
@@ -1135,7 +1195,7 @@ body {
         }
 
 
-        @media only screen and (min-width: 501px) and (max-width: 1000px) {
+        @media only screen and (min-width: 601px) and (max-width: 1000px) {
 
             .previewLinks {
                 width: 100%;
@@ -1166,8 +1226,65 @@ body {
 
         }
 
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 600px) {
 
+            .itemFirstSection {
+                flex-direction: column;
+                width: 48%;
+                text-align: center;
+            }
+
+            .endSection {
+                width: 25%;
+            }
+
+            .itemBorderDiv {
+                justify-content: flex-start;
+
+            }
+            .previewLinks {
+                width: 100%;
+            }
+
+            .totalWrapper {
+                height: 3vh;
+                padding-top: 2%;
+            }
+
+            .cartTotal {
+                font-size: 4vw;
+                height: inherit;
+                        }
+
+            .checkoutLink {
+                font-size: 5vw;
+            }
+
+            .cartPreviewName {
+                font-size: 4vw;
+                text-align: center;
+            }
+            .cartPreviewPrice {
+                font-size: 4vw;
+                text-align: center;
+            }
+            .cartPreviewQuantity {
+                font-size: 4vw;
+                text-align: center;
+            }
+
+            .removeItem {
+                transform: scale(300%);
+                margin-left: 4.5%;
+            }
+
+            .quantityButton {
+                transform: scale(80%);
+            }
+
+            .cartPreviewItem {
+                width: 85%;
+            }
         }
 
 a {

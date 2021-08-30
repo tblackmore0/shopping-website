@@ -3,6 +3,7 @@ import { ShowItemModal } from './ShopList';
 function ItemCard (props) {
 
   let item = props.item
+  console.log(item)
 
   return (
 

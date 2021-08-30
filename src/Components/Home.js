@@ -10,6 +10,9 @@ function Home () {
         let shoppingC = document.getElementById('shoppingCartImg')
         let cartN = document.getElementById('cartNumber')
 
+        let arrow = document.getElementById('returnArrowShop')
+        if (arrow) { arrow.style.display='none'};
+
         shoppingC.src = ('siteImages/shopping-bag.png');
         cartN.style.color = ('black');
         logo.style.color = ('black');
